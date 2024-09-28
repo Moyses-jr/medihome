@@ -1,0 +1,166 @@
+{
+  "format": 1,
+  "restore": {
+    "C:\\Users\\moyses\\Desktop\\TCC\\medihome\\Back-end\\MediHome.WebApi\\MediHome.WebApi.csproj": {}
+  },
+  "projects": {
+    "C:\\Users\\moyses\\Desktop\\TCC\\medihome\\Back-end\\MediHome.Common\\MediHome.Common.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\moyses\\Desktop\\TCC\\medihome\\Back-end\\MediHome.Common\\MediHome.Common.csproj",
+        "projectName": "MediHome.Common",
+        "projectPath": "C:\\Users\\moyses\\Desktop\\TCC\\medihome\\Back-end\\MediHome.Common\\MediHome.Common.csproj",
+        "packagesPath": "C:\\Users\\moyses\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\moyses\\Desktop\\TCC\\medihome\\Back-end\\MediHome.Common\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\moyses\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net8.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "C:\\Program Files\\dotnet\\library-packs": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net8.0": {
+            "targetAlias": "net8.0",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
+        }
+      },
+      "frameworks": {
+        "net8.0": {
+          "targetAlias": "net8.0",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.400/PortableRuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\Users\\moyses\\Desktop\\TCC\\medihome\\Back-end\\MediHome.WebApi\\MediHome.WebApi.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\moyses\\Desktop\\TCC\\medihome\\Back-end\\MediHome.WebApi\\MediHome.WebApi.csproj",
+        "projectName": "MediHome.WebApi",
+        "projectPath": "C:\\Users\\moyses\\Desktop\\TCC\\medihome\\Back-end\\MediHome.WebApi\\MediHome.WebApi.csproj",
+        "packagesPath": "C:\\Users\\moyses\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\moyses\\Desktop\\TCC\\medihome\\Back-end\\MediHome.WebApi\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\moyses\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net8.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "C:\\Program Files\\dotnet\\library-packs": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net8.0": {
+            "targetAlias": "net8.0",
+            "projectReferences": {
+              "C:\\Users\\moyses\\Desktop\\TCC\\medihome\\Back-end\\MediHome.Common\\MediHome.Common.csproj": {
+                "projectPath": "C:\\Users\\moyses\\Desktop\\TCC\\medihome\\Back-end\\MediHome.Common\\MediHome.Common.csproj"
+              },
+              "C:\\Users\\moyses\\Desktop\\TCC\\medihome\\Back-end\\MediHome\\MediHome.Application.csproj": {
+                "projectPath": "C:\\Users\\moyses\\Desktop\\TCC\\medihome\\Back-end\\MediHome\\MediHome.Application.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
+        }
+      },
+      "frameworks": {
+        "net8.0": {
+          "targetAlias": "net8.0",
+          "dependencies": {
+            "MediatR": {
+              "target": "Package",
+              "version": "[12.3.0, )"
+            },
+            "Serilog": {
+              "target": "Package",
+              "version": "[4.0.0, )"
+            },
+            "Serilog.AspNetCore": {
+              "target": "Package",
+              "version": "[8.0.1, )"
+            },
+            "Serilog.Exceptions": {
+              "target": "Package",
+              "version": "[8.4.0, )"
+            },
+            "Serilog.Sinks.Console": {
+              "target": "Package",
+              "version": "[6.0.0, )"
+            },
+            "Serilog.Sinks.Seq": {
+              "target": "Package",
+              "version": "[8.0.0, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.AspNetCore.App": {
+              "privateAssets": "none"
+            },
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.400/PortableRuntimeIdentifierGraph.json"
+        }
+      }
+    }
+  }
+}
