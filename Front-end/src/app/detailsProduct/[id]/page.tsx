@@ -14,66 +14,50 @@ import {
 } from "@/components/ui/card";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
+import products from "@/app/home/listProduct";
 
-const product = {
-  id: 1,
-  name: "Premium Wireless Headphones",
-  price: 199.99,
-  rating: 4.5,
-  reviewCount: 128,
-  description:
-    "Experience crystal-clear audio with our premium wireless headphones. Featuring advanced noise-cancellation technology, comfortable over-ear design, and long-lasting battery life.",
-  features: [
-    "40mm dynamic drivers for superior sound quality",
-    "Active Noise Cancellation (ANC) technology",
-    "Up to 30 hours of battery life",
-    "Bluetooth 5.0 for stable connectivity",
-    "Comfortable memory foam ear cushions",
-    "Built-in microphone for calls",
-  ],
-  images: [
-    "/placeholder.svg?height=400&width=400",
-    "/placeholder.svg?height=400&width=400",
-    "/placeholder.svg?height=400&width=400",
-  ],
-};
-
-// Mock review data
 const reviews = [
   {
     id: 1,
     author: "John D.",
     rating: 5,
-    comment:
-      "Excellent sound quality and very comfortable for long listening sessions.",
+    comment: "Topper o serviço.",
     date: "2023-05-15",
   },
   {
     id: 2,
     author: "Sarah M.",
     rating: 4,
-    comment: "Great headphones, but the app could use some improvements.",
+    comment: "O valor é um pouco auto, mas recomendo.",
     date: "2023-05-10",
   },
   {
     id: 3,
     author: "Mike R.",
     rating: 5,
-    comment:
-      "The noise cancellation is fantastic! Perfect for my daily commute.",
+    comment: "Muito bom.",
     date: "2023-05-05",
   },
 ];
 
-interface ProdutoDetalhesProps {
-  params: {
-    id: string; // Tipando como string, já que o id da URL é uma string
-  };
+interface ProductProps {
+  id: number;
+  name: string;
+  price: number;
+  rating: number;
+  reviewCount: number;
+  description: string;
+  images: string; // ou `string[]` se for um array de URLs de imagens
 }
 
-export default function ProductDetails({ params }: ProdutoDetalhesProps) {
+export default function ProductDetails({ params }: { params: { id: string } }) {
   const { id } = params;
+  const product = products.find((product) => product.id === Number(id));
   const [quantity, setQuantity] = useState(1);
+
+  if (!product) {
+    return <p>Produto não encontrado.</p>;
+  }
 
   const incrementQuantity = () => setQuantity((prev) => prev + 1);
   const decrementQuantity = () =>
@@ -83,9 +67,9 @@ export default function ProductDetails({ params }: ProdutoDetalhesProps) {
     <div className="container mx-auto px-4 py-8">
       <div className="grid md:grid-cols-2 gap-8">
         <div className="space-y-4">
-          <div className="aspect-square relative overflow-hidden rounded-lg">
+          <div className="aspect-square relative overflow-hidden rounded-lg h-3/5">
             <Image
-              src={product.images[0]}
+              src={product.image}
               alt={product.name}
               layout="fill"
               objectFit="cover"
@@ -93,20 +77,15 @@ export default function ProductDetails({ params }: ProdutoDetalhesProps) {
             />
           </div>
           <div className="grid grid-cols-3 gap-4">
-            {product.images.slice(1).map((image, index) => (
-              <div
-                key={index}
-                className="aspect-square relative overflow-hidden rounded-lg"
-              >
-                <Image
-                  src={image}
-                  alt={`${product.name} - Image ${index + 2}`}
-                  layout="fill"
-                  objectFit="cover"
-                  className="w-full h-full object-center"
-                />
-              </div>
-            ))}
+            <div className="aspect-square relative overflow-hidden rounded-lg">
+              <Image
+                src={product.image}
+                alt={`${product.name} detalhes`}
+                layout="fill"
+                objectFit="cover"
+                className="w-full h-full object-center"
+              />
+            </div>
           </div>
         </div>
         <div className="space-y-6">
@@ -125,7 +104,7 @@ export default function ProductDetails({ params }: ProdutoDetalhesProps) {
               ))}
             </div>
             <span className="text-sm text-gray-600">
-              ({product.reviewCount} reviews)
+              ({product.reviewCount} avaliações)
             </span>
           </div>
           <p className="text-3xl font-bold">${product.price.toFixed(2)}</p>
@@ -141,7 +120,7 @@ export default function ProductDetails({ params }: ProdutoDetalhesProps) {
               </Button>
             </div>
             <Button className="flex-1">
-              <ShoppingCart className="mr-2 h-4 w-4" /> Add to Cart
+              <ShoppingCart className="mr-2 h-4 w-4" /> Contratar
             </Button>
           </div>
         </div>
@@ -149,30 +128,24 @@ export default function ProductDetails({ params }: ProdutoDetalhesProps) {
 
       <Tabs defaultValue="details" className="mt-12">
         <TabsList>
-          <TabsTrigger value="details">Product {id} Details</TabsTrigger>
-          <TabsTrigger value="reviews">Reviews</TabsTrigger>
+          <TabsTrigger value="details">
+            Detalhes do profissional {id}
+          </TabsTrigger>
+          <TabsTrigger value="reviews">Avaliações</TabsTrigger>
         </TabsList>
         <TabsContent value="details">
           <Card>
             <CardHeader>
-              <CardTitle>Features</CardTitle>
+              <CardTitle>Sobre o mim</CardTitle>
             </CardHeader>
-            <CardContent>
-              <ul className="list-disc pl-5 space-y-2">
-                {product.features.map((feature, index) => (
-                  <li key={index}>{feature}</li>
-                ))}
-              </ul>
-            </CardContent>
+            <CardContent>{product.about}</CardContent>
           </Card>
         </TabsContent>
         <TabsContent value="reviews">
           <Card>
             <CardHeader>
-              <CardTitle>Customer Reviews</CardTitle>
-              <CardDescription>
-                Read what our customers are saying about this product
-              </CardDescription>
+              <CardTitle>Avaliações dos Clientes</CardTitle>
+              <CardDescription>Veja o opiniões sobre o serviço</CardDescription>
             </CardHeader>
             <CardContent>
               <div className="space-y-6">
@@ -211,7 +184,7 @@ export default function ProductDetails({ params }: ProdutoDetalhesProps) {
             </CardContent>
             <CardFooter>
               <Button variant="outline" className="w-full">
-                Load More Reviews
+                Carregar mais avaliações
               </Button>
             </CardFooter>
           </Card>

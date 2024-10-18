@@ -13,9 +13,22 @@ import { Checkbox } from "@/components/ui/checkbox";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { useEffect, useState } from "react";
+import { useRouter } from "next/navigation";
 
 export default function LoginPage() {
   const [isClient, setIsClient] = useState(false);
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const router = useRouter();
+
+  const handleLogin = (e: any) => {
+    e.preventDefault();
+
+    if (email === "moi@gmail.com" && password === "123") {
+      localStorage.setItem("auth", "true");
+      router.push("/home");
+    }
+  };
 
   useEffect(() => {
     setIsClient(true);
@@ -33,8 +46,8 @@ export default function LoginPage() {
               Inseria abaixo seu e-mail e senha
             </CardDescription>
           </CardHeader>
-          <CardContent>
-            <form>
+          <form onSubmit={handleLogin}>
+            <CardContent>
               <div className="space-y-4">
                 <div className="space-y-2">
                   <Label htmlFor="email">E-mail</Label>
@@ -43,39 +56,49 @@ export default function LoginPage() {
                     type="email"
                     placeholder="moyifrs@example.com"
                     required
+                    onChange={(e) => setEmail(e.target.value)}
                   />
                 </div>
                 <div className="space-y-2">
                   <Label htmlFor="password">Senha</Label>
-                  <Input id="password" type="password" required />
+                  <Input
+                    id="password"
+                    type="password"
+                    required
+                    onChange={(e) => setPassword(e.target.value)}
+                  />
                 </div>
                 <div className="flex items-center space-x-2">
                   <Checkbox id="remember" />
                   <Label htmlFor="remember">Lembrar de mim</Label>
                 </div>
               </div>
-            </form>
-          </CardContent>
-          <CardFooter className="flex flex-col space-y-4">
-            <Button className="w-full">Entrar</Button>
-            <div className="text-sm text-center space-y-2">
-              <Link
-                href="/forgot-password"
-                className="text-primary hover:underline"
-              >
-                Esqueceu a senha?
-              </Link>
-              <div>
-                Não tem conta?{" "}
-                <Link href="/register" className="text-primary hover:underline">
-                  Cadastrar-se agora
+            </CardContent>
+            <CardFooter className="flex flex-col space-y-4">
+              <Button type="submit" className="w-full">
+                Entrar
+              </Button>
+              <div className="text-sm text-center space-y-2">
+                <Link
+                  href="/forgot-password"
+                  className="text-primary hover:underline"
+                >
+                  Esqueceu a senha?
                 </Link>
+                <div>
+                  Não tem conta?{" "}
+                  <Link
+                    href="/register"
+                    className="text-primary hover:underline"
+                  >
+                    Cadastrar-se agora
+                  </Link>
+                </div>
               </div>
-            </div>
-          </CardFooter>
+            </CardFooter>
+          </form>
         </Card>
       </div>
     )
   );
 }
-

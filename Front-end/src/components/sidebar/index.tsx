@@ -1,17 +1,31 @@
+"use client";
 import Link from "next/link";
 import { Button } from "../ui/button";
 import { Sheet, SheetTrigger, SheetContent } from "../ui/sheet";
 import Image from "next/image";
 import logoCompany from "@/assets/simbolo-de-medicina.png";
-import { FaBars, FaHouse, FaUserGear, FaGears } from "react-icons/fa6";
+import {
+  FaBars,
+  FaHouse,
+  FaUserGear,
+  FaGears,
+  FaPowerOff,
+} from "react-icons/fa6";
 import {
   Tooltip,
   TooltipContent,
   TooltipProvider,
   TooltipTrigger,
 } from "@radix-ui/react-tooltip";
+import { useRouter } from "next/navigation";
 
 const Sidebar = () => {
+  const router = useRouter();
+  const handleLogout = () => {
+    localStorage.removeItem("auth");
+    router.push("/");
+  };
+
   return (
     <div className="flex w-full flex-col bg-muted/40">
       <aside className="fixed inset-y-0 left-0 hidden w-14 border-r bg-background sm:flex">
@@ -60,6 +74,14 @@ const Sidebar = () => {
                 </Link>
               </TooltipTrigger>
               <TooltipContent side="right">Configurações</TooltipContent>
+            </Tooltip>
+            <Tooltip>
+              <TooltipTrigger asChild>
+                <button onClick={handleLogout}>
+                  <FaPowerOff className="h-5 w-5 transition-all " />
+                </button>
+              </TooltipTrigger>
+              <TooltipContent side="right">Sair</TooltipContent>
             </Tooltip>
           </TooltipProvider>
         </nav>

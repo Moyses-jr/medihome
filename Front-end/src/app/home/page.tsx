@@ -1,21 +1,14 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Image from "next/image";
-import { Button } from "@/components/ui/button";
 import esg from "../../assets/esgProfisional.jpeg";
 import prom from "../../assets/promissora.jpg";
 import loira from "../../assets/loriraDe_rosa.jpg";
 import medico from "../../assets/medicoFerramenta.jpg";
 import loira2 from "../../assets/loiraDiferenciada.jpg";
 import lei from "../../assets/retrato_profissional_de_advogado.jpg";
-import {
-  Card,
-  CardContent,
-  CardFooter,
-  CardHeader,
-  CardTitle,
-} from "@/components/ui/card";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import {
   Select,
   SelectContent,
@@ -25,50 +18,28 @@ import {
 } from "@/components/ui/select";
 import { Input } from "@/components/ui/input";
 import Link from "next/link";
-
-const products = [
-  {
-    id: 1,
-    name: "Marta Machado",
-    price: 199.99,
-    image: esg,
-  },
-  {
-    id: 2,
-    name: "Carlos Jeans",
-    price: 59.99,
-    image: lei,
-  },
-  {
-    id: 3,
-    name: "João Sneakers",
-    price: 89.99,
-    image: medico,
-  },
-  {
-    id: 4,
-    name: "Paula Nunes",
-    price: 24.99,
-    image: loira,
-  },
-  {
-    id: 5,
-    name: "Louissa Hoodie",
-    price: 49.99,
-    image: prom,
-  },
-  {
-    id: 6,
-    name: "Amanda Backpack",
-    price: 79.99,
-    image: loira2,
-  },
-];
+import { useRouter } from "next/navigation";
+import products from "./listProduct";
 
 export default function ProductCatalog() {
   const [searchTerm, setSearchTerm] = useState("");
   const [sortOrder, setSortOrder] = useState("name");
 
+  const [loading, setLoading] = useState(true);
+  const router = useRouter();
+
+  useEffect(() => {
+    const isAuthenticated = localStorage.getItem("auth");
+    if (!isAuthenticated) {
+      router.push("/");
+    } else {
+      setLoading(false);
+    }
+  }, [router]);
+
+  if (loading) {
+    return <p></p>;
+  }
   const filteredAndSortedProducts = products
     .filter((product) =>
       product.name.toLowerCase().includes(searchTerm.toLowerCase())
@@ -82,7 +53,6 @@ export default function ProductCatalog() {
   return (
     <div className="container mx-auto px-4 py-8">
       <h1 className="text-3xl font-bold mb-8">Profissionais disponíveis</h1>
-
       <div className="flex flex-col sm:flex-row justify-between items-center mb-8 space-y-4 sm:space-y-0 sm:space-x-4">
         <Input
           type="search"
@@ -108,7 +78,6 @@ export default function ProductCatalog() {
           <Card key={product.id}>
             <Link href={`/detailsProduct/${product.id}`} passHref>
               <CardHeader>
-                {/* Link para a página de detalhes do produto com base no ID */}
                 <Image
                   src={product.image}
                   alt={product.name}
