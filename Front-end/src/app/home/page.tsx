@@ -51,7 +51,7 @@ export default function ProductCatalog() {
     });
 
   return (
-    <div className="container mx-auto px-4 py-8">
+    <div className="sm:ml-14 container mx-auto px-4 py-8">
       <h1 className="text-3xl font-bold mb-8">Profissionais disponíveis</h1>
       <div className="flex flex-col sm:flex-row justify-between items-center mb-8 space-y-4 sm:space-y-0 sm:space-x-4">
         <Input

@@ -28,20 +28,30 @@ const Sidebar = () => {
 
   return (
     <div className="flex w-full flex-col bg-muted/40">
-      <aside className="fixed inset-y-0 left-0 hidden w-14 border-r bg-background sm:flex">
-        <nav className="flex flex-col items-center gap-6 px-2 py-5">
+      <aside className="fixed inset-y-0 left-0 z-10 hidden w-14 border-r bg-background sm:flex flex-col">
+        <nav className="flex flex-col items-center gap-4 px-2 py-5">
           <TooltipProvider>
-            <Link
-              href={"/home"}
-              className="flex border-2 h-10 w-10 rounded-xl hover:bg-muted text-lg items-center justify-center  md:text-base"
-            >
-              <Image
-                src={logoCompany}
-                alt="Logo e menu principal"
-                width={20}
-                height={20}
-              />
-            </Link>
+            <Tooltip>
+              <TooltipTrigger asChild>
+                <Link
+                  href={"/home"}
+                  className="flex border-2 h-10 w-10 rounded-xl hover:bg-muted items-center justify-center gap-4 md:text-base"
+                >
+                  <Image
+                    src={logoCompany}
+                    alt="Logo e menu principal"
+                    width={20}
+                    height={20}
+                  />
+                </Link>
+              </TooltipTrigger>
+              <TooltipContent
+                className="bg-red-200 px-3 py-2 rounded-xl bg-opacity-90"
+                side="right"
+              >
+                MediHome
+              </TooltipContent>
+            </Tooltip>
             <Tooltip>
               <TooltipTrigger asChild>
                 <Link
@@ -51,7 +61,12 @@ const Sidebar = () => {
                   <FaHouse className="h-5 w-5 transition-all " />
                 </Link>
               </TooltipTrigger>
-              <TooltipContent side="right">Página inicial</TooltipContent>
+              <TooltipContent
+                className="bg-red-200 px-3 py-2 rounded-xl bg-opacity-90"
+                side="right"
+              >
+                Página inicial
+              </TooltipContent>
             </Tooltip>
             <Tooltip>
               <TooltipTrigger asChild>
@@ -62,7 +77,12 @@ const Sidebar = () => {
                   <FaUserGear className="h-5 w-5 transition-all " />
                 </Link>
               </TooltipTrigger>
-              <TooltipContent side="right">Seu perfil</TooltipContent>
+              <TooltipContent
+                className="bg-red-200 px-3 py-2 rounded-xl bg-opacity-90"
+                side="right"
+              >
+                Seu perfil
+              </TooltipContent>
             </Tooltip>
             <Tooltip>
               <TooltipTrigger asChild>
@@ -73,15 +93,32 @@ const Sidebar = () => {
                   <FaGears className="h-5 w-5 transition-all " />
                 </Link>
               </TooltipTrigger>
-              <TooltipContent side="right">Configurações</TooltipContent>
+              <TooltipContent
+                className="bg-red-200 px-3 py-2 rounded-xl bg-opacity-90"
+                side="right"
+              >
+                Configurações
+              </TooltipContent>
             </Tooltip>
+          </TooltipProvider>
+        </nav>
+        <nav className="mt-auto flex flex-col items-center gap-4 px-2 py-5">
+          <TooltipProvider>
             <Tooltip>
               <TooltipTrigger asChild>
-                <button onClick={handleLogout}>
+                <button
+                  onClick={handleLogout}
+                  className="flex items-center gap-4 px-2.5 hover:text-muted-foreground text-red-600"
+                >
                   <FaPowerOff className="h-5 w-5 transition-all " />
                 </button>
               </TooltipTrigger>
-              <TooltipContent side="right">Sair</TooltipContent>
+              <TooltipContent
+                className="bg-red-300 px-3 py-2 rounded-xl bg-opacity-90"
+                side="right"
+              >
+                Sair
+              </TooltipContent>
             </Tooltip>
           </TooltipProvider>
         </nav>
@@ -99,7 +136,7 @@ const Sidebar = () => {
               <nav className="grid gap-6 text-lg font-normal">
                 <Link
                   href={"/home"}
-                  className="flex border-2 h-10 w-10 rounded-xl  hover:bg-muted text-lg items-center justify-center"
+                  className="flex border-2 h-10 w-10 rounded-xl  gap-4 pl-1.5 hover:bg-muted text-lg items-center "
                 >
                   <Image
                     src={logoCompany}
@@ -107,6 +144,7 @@ const Sidebar = () => {
                     width={25}
                     height={25}
                   />
+                  Medihome
                 </Link>
                 <Link
                   href={"/home"}
@@ -129,6 +167,15 @@ const Sidebar = () => {
                   <FaGears className="h-5 w-5 transition-all " />
                   Configurações
                 </Link>
+              </nav>
+              <nav className="mt-auto items-center gap-4 px-2 pt-[425px]">
+                <button
+                  onClick={handleLogout}
+                  className="flex items-center gap-4 px-2.5 hover:text-muted-foreground text-red-600"
+                >
+                  <FaPowerOff className="h-5 w-5 transition-all " />
+                  Sair
+                </button>
               </nav>
             </SheetContent>
           </Sheet>

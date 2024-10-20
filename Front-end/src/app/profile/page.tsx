@@ -83,7 +83,7 @@ export default function ProfileChangePage() {
   };
 
   return (
-    <div className="container mx-auto px-4 py-8 ">
+    <div className="sm:ml-14 container mx-auto px-4 py-8">
       <Formik
         initialValues={{
           email: "",

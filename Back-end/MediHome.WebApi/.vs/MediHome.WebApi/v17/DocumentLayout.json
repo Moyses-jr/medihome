@@ -67,8 +67,7 @@
               "RelativeToolTip": "..\\MediHome.Common\\Factory\\DatabaseFactory.cs",
               "ViewState": "AgIAACcAAAAAAAAAAAAmwBAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-09-28T01:33:16.008Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-09-28T01:33:16.008Z"
             },
             {
               "$type": "Document",
@@ -80,8 +79,7 @@
               "RelativeToolTip": "..\\MediHome.Common\\Factory\\Interfaces\\IDatabaseFactory.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAqwA0AAAAVAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-09-28T01:32:25.622Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-09-28T01:32:25.622Z"
             },
             {
               "$type": "Document",
@@ -93,21 +91,19 @@
               "RelativeToolTip": "..\\MediHome.Common\\Repository\\ILocalDatabaseRepository.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAAFAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-09-28T01:30:51.895Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-09-28T01:30:51.895Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 5,
-              "Title": "MediHome.Common",
+              "Title": "MediHome.Common.csproj",
               "DocumentMoniker": "C:\\Users\\moyses\\Desktop\\TCC\\medihome\\Back-end\\MediHome.Common\\MediHome.Common.csproj",
               "RelativeDocumentMoniker": "..\\MediHome.Common\\MediHome.Common.csproj",
               "ToolTip": "C:\\Users\\moyses\\Desktop\\TCC\\medihome\\Back-end\\MediHome.Common\\MediHome.Common.csproj",
               "RelativeToolTip": "..\\MediHome.Common\\MediHome.Common.csproj",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
-              "WhenOpened": "2024-09-28T01:18:34.863Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-09-28T01:18:34.863Z"
             },
             {
               "$type": "Document",
@@ -119,8 +115,7 @@
               "RelativeToolTip": "Startup.cs",
               "ViewState": "AgIAABUAAAAAAAAAAAAowBQAAAA6AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-09-28T01:08:56.344Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-09-28T01:08:56.344Z"
             },
             {
               "$type": "Document",
@@ -132,8 +127,7 @@
               "RelativeToolTip": "appsettings.json",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2024-09-28T01:03:34.035Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-09-28T01:03:34.035Z"
             },
             {
               "$type": "Document",
@@ -145,21 +139,19 @@
               "RelativeToolTip": "ExceptionFilter.cs",
               "ViewState": "AgIAABQAAAAAAAAAAAAwwCAAAAAjAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-09-28T01:28:40.505Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-09-28T01:28:40.505Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 6,
-              "Title": "MediHome.WebApi",
+              "Title": "MediHome.WebApi.csproj",
               "DocumentMoniker": "C:\\Users\\moyses\\Desktop\\TCC\\medihome\\Back-end\\MediHome.WebApi\\MediHome.WebApi.csproj",
               "RelativeDocumentMoniker": "MediHome.WebApi.csproj",
               "ToolTip": "C:\\Users\\moyses\\Desktop\\TCC\\medihome\\Back-end\\MediHome.WebApi\\MediHome.WebApi.csproj",
               "RelativeToolTip": "MediHome.WebApi.csproj",
               "ViewState": "AgIAAAYAAAAAAAAAAAAAABIAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
-              "WhenOpened": "2024-09-28T01:06:19.764Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-09-28T01:06:19.764Z"
             },
             {
               "$type": "Bookmark",

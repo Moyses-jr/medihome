@@ -64,7 +64,7 @@ export default function ProductDetails({ params }: { params: { id: string } }) {
     setQuantity((prev) => (prev > 1 ? prev - 1 : 1));
 
   return (
-    <div className="container mx-auto px-4 py-8">
+    <div className="sm:ml-14 container mx-auto px-4 py-8">
       <div className="grid md:grid-cols-2 gap-8">
         <div className="space-y-4">
           <div className="aspect-square relative overflow-hidden rounded-lg h-3/5">
