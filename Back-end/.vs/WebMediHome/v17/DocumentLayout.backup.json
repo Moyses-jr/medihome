@@ -1,0 +1,258 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\moyses\\Desktop\\TCC\\medihome\\Back-end\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{618ED521-D5F0-4079-A336-7E4E3C5F324C}|WebMediHome\\WebMediHome.csproj|c:\\users\\moyses\\desktop\\tcc\\medihome\\back-end\\webmedihome\\controllers\\userscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{618ED521-D5F0-4079-A336-7E4E3C5F324C}|WebMediHome\\WebMediHome.csproj|solutionrelative:webmedihome\\controllers\\userscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{618ED521-D5F0-4079-A336-7E4E3C5F324C}|WebMediHome\\WebMediHome.csproj|c:\\users\\moyses\\desktop\\tcc\\medihome\\back-end\\webmedihome\\security\\authorizeattribute.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{618ED521-D5F0-4079-A336-7E4E3C5F324C}|WebMediHome\\WebMediHome.csproj|solutionrelative:webmedihome\\security\\authorizeattribute.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{618ED521-D5F0-4079-A336-7E4E3C5F324C}|WebMediHome\\WebMediHome.csproj|c:\\users\\moyses\\desktop\\tcc\\medihome\\back-end\\webmedihome\\controllers\\professionalcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{618ED521-D5F0-4079-A336-7E4E3C5F324C}|WebMediHome\\WebMediHome.csproj|solutionrelative:webmedihome\\controllers\\professionalcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{618ED521-D5F0-4079-A336-7E4E3C5F324C}|WebMediHome\\WebMediHome.csproj|c:\\users\\moyses\\desktop\\tcc\\medihome\\back-end\\webmedihome\\controllers\\clientcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{618ED521-D5F0-4079-A336-7E4E3C5F324C}|WebMediHome\\WebMediHome.csproj|solutionrelative:webmedihome\\controllers\\clientcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{618ED521-D5F0-4079-A336-7E4E3C5F324C}|WebMediHome\\WebMediHome.csproj|c:\\users\\moyses\\desktop\\tcc\\medihome\\back-end\\webmedihome\\security\\jwtmiddleware.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{618ED521-D5F0-4079-A336-7E4E3C5F324C}|WebMediHome\\WebMediHome.csproj|solutionrelative:webmedihome\\security\\jwtmiddleware.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{618ED521-D5F0-4079-A336-7E4E3C5F324C}|WebMediHome\\WebMediHome.csproj|c:\\users\\moyses\\desktop\\tcc\\medihome\\back-end\\webmedihome\\services\\client\\clientservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{618ED521-D5F0-4079-A336-7E4E3C5F324C}|WebMediHome\\WebMediHome.csproj|solutionrelative:webmedihome\\services\\client\\clientservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{618ED521-D5F0-4079-A336-7E4E3C5F324C}|WebMediHome\\WebMediHome.csproj|c:\\users\\moyses\\desktop\\tcc\\medihome\\back-end\\webmedihome\\services\\autor\\autorservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{618ED521-D5F0-4079-A336-7E4E3C5F324C}|WebMediHome\\WebMediHome.csproj|solutionrelative:webmedihome\\services\\autor\\autorservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{618ED521-D5F0-4079-A336-7E4E3C5F324C}|WebMediHome\\WebMediHome.csproj|c:\\users\\moyses\\desktop\\tcc\\medihome\\back-end\\webmedihome\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{618ED521-D5F0-4079-A336-7E4E3C5F324C}|WebMediHome\\WebMediHome.csproj|solutionrelative:webmedihome\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\moyses\\Desktop\\TCC\\medihome\\Back-end\\WebMediHome\\Migrations\\20241123112914_initDb.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:WebMediHome\\Migrations\\20241123112914_initDb.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{618ED521-D5F0-4079-A336-7E4E3C5F324C}|WebMediHome\\WebMediHome.csproj|c:\\users\\moyses\\desktop\\tcc\\medihome\\back-end\\webmedihome\\model\\usermodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{618ED521-D5F0-4079-A336-7E4E3C5F324C}|WebMediHome\\WebMediHome.csproj|solutionrelative:webmedihome\\model\\usermodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{618ED521-D5F0-4079-A336-7E4E3C5F324C}|WebMediHome\\WebMediHome.csproj|c:\\users\\moyses\\desktop\\tcc\\medihome\\back-end\\webmedihome\\services\\user\\iuserservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{618ED521-D5F0-4079-A336-7E4E3C5F324C}|WebMediHome\\WebMediHome.csproj|solutionrelative:webmedihome\\services\\user\\iuserservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{618ED521-D5F0-4079-A336-7E4E3C5F324C}|WebMediHome\\WebMediHome.csproj|c:\\users\\moyses\\desktop\\tcc\\medihome\\back-end\\webmedihome\\services\\user\\userservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{618ED521-D5F0-4079-A336-7E4E3C5F324C}|WebMediHome\\WebMediHome.csproj|solutionrelative:webmedihome\\services\\user\\userservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{618ED521-D5F0-4079-A336-7E4E3C5F324C}|WebMediHome\\WebMediHome.csproj|c:\\users\\moyses\\desktop\\tcc\\medihome\\back-end\\webmedihome\\services\\autor\\iautorinterface.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{618ED521-D5F0-4079-A336-7E4E3C5F324C}|WebMediHome\\WebMediHome.csproj|solutionrelative:webmedihome\\services\\autor\\iautorinterface.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{618ED521-D5F0-4079-A336-7E4E3C5F324C}|WebMediHome\\WebMediHome.csproj|c:\\users\\moyses\\desktop\\tcc\\medihome\\back-end\\webmedihome\\data\\appdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{618ED521-D5F0-4079-A336-7E4E3C5F324C}|WebMediHome\\WebMediHome.csproj|solutionrelative:webmedihome\\data\\appdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 4,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "ProfessionalController.cs",
+              "DocumentMoniker": "C:\\Users\\moyses\\Desktop\\TCC\\medihome\\Back-end\\WebMediHome\\Controllers\\ProfessionalController.cs",
+              "RelativeDocumentMoniker": "WebMediHome\\Controllers\\ProfessionalController.cs",
+              "ToolTip": "C:\\Users\\moyses\\Desktop\\TCC\\medihome\\Back-end\\WebMediHome\\Controllers\\ProfessionalController.cs",
+              "RelativeToolTip": "WebMediHome\\Controllers\\ProfessionalController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAACQAAAASAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-23T11:37:08.496Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "ClientController.cs",
+              "DocumentMoniker": "C:\\Users\\moyses\\Desktop\\TCC\\medihome\\Back-end\\WebMediHome\\Controllers\\ClientController.cs",
+              "RelativeDocumentMoniker": "WebMediHome\\Controllers\\ClientController.cs",
+              "ToolTip": "C:\\Users\\moyses\\Desktop\\TCC\\medihome\\Back-end\\WebMediHome\\Controllers\\ClientController.cs",
+              "RelativeToolTip": "WebMediHome\\Controllers\\ClientController.cs",
+              "ViewState": "AgIAABsAAAAAAAAAAADwvyQAAAASAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-23T11:21:59.454Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "AuthorizeAttribute.cs",
+              "DocumentMoniker": "C:\\Users\\moyses\\Desktop\\TCC\\medihome\\Back-end\\WebMediHome\\Security\\AuthorizeAttribute.cs",
+              "RelativeDocumentMoniker": "WebMediHome\\Security\\AuthorizeAttribute.cs",
+              "ToolTip": "C:\\Users\\moyses\\Desktop\\TCC\\medihome\\Back-end\\WebMediHome\\Security\\AuthorizeAttribute.cs",
+              "RelativeToolTip": "WebMediHome\\Security\\AuthorizeAttribute.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAMAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-23T11:23:23.269Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "JwtMiddleware.cs",
+              "DocumentMoniker": "C:\\Users\\moyses\\Desktop\\TCC\\medihome\\Back-end\\WebMediHome\\Security\\JwtMiddleware.cs",
+              "RelativeDocumentMoniker": "WebMediHome\\Security\\JwtMiddleware.cs",
+              "ToolTip": "C:\\Users\\moyses\\Desktop\\TCC\\medihome\\Back-end\\WebMediHome\\Security\\JwtMiddleware.cs",
+              "RelativeToolTip": "WebMediHome\\Security\\JwtMiddleware.cs",
+              "ViewState": "AgIAACkAAAAAAAAAAAAnwAkAAAARAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-23T11:25:41.079Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "UsersController.cs",
+              "DocumentMoniker": "C:\\Users\\moyses\\Desktop\\TCC\\medihome\\Back-end\\WebMediHome\\Controllers\\UsersController.cs",
+              "RelativeDocumentMoniker": "WebMediHome\\Controllers\\UsersController.cs",
+              "ToolTip": "C:\\Users\\moyses\\Desktop\\TCC\\medihome\\Back-end\\WebMediHome\\Controllers\\UsersController.cs",
+              "RelativeToolTip": "WebMediHome\\Controllers\\UsersController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAATAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-23T11:24:53.735Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "ClientService.cs",
+              "DocumentMoniker": "C:\\Users\\moyses\\Desktop\\TCC\\medihome\\Back-end\\WebMediHome\\Services\\Client\\ClientService.cs",
+              "RelativeDocumentMoniker": "WebMediHome\\Services\\Client\\ClientService.cs",
+              "ToolTip": "C:\\Users\\moyses\\Desktop\\TCC\\medihome\\Back-end\\WebMediHome\\Services\\Client\\ClientService.cs",
+              "RelativeToolTip": "WebMediHome\\Services\\Client\\ClientService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-23T11:26:03.654Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "AutorService.cs",
+              "DocumentMoniker": "C:\\Users\\moyses\\Desktop\\TCC\\medihome\\Back-end\\WebMediHome\\Services\\Autor\\AutorService.cs",
+              "RelativeDocumentMoniker": "WebMediHome\\Services\\Autor\\AutorService.cs",
+              "ToolTip": "C:\\Users\\moyses\\Desktop\\TCC\\medihome\\Back-end\\WebMediHome\\Services\\Autor\\AutorService.cs",
+              "RelativeToolTip": "WebMediHome\\Services\\Autor\\AutorService.cs",
+              "ViewState": "AgIAAI0AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-23T11:25:49.519Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\moyses\\Desktop\\TCC\\medihome\\Back-end\\WebMediHome\\Program.cs",
+              "RelativeDocumentMoniker": "WebMediHome\\Program.cs",
+              "ToolTip": "C:\\Users\\moyses\\Desktop\\TCC\\medihome\\Back-end\\WebMediHome\\Program.cs",
+              "RelativeToolTip": "WebMediHome\\Program.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAFIAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-23T11:18:39.063Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "20241123112914_initDb.cs",
+              "DocumentMoniker": "C:\\Users\\moyses\\Desktop\\TCC\\medihome\\Back-end\\WebMediHome\\Migrations\\20241123112914_initDb.cs",
+              "RelativeDocumentMoniker": "WebMediHome\\Migrations\\20241123112914_initDb.cs",
+              "ToolTip": "C:\\Users\\moyses\\Desktop\\TCC\\medihome\\Back-end\\WebMediHome\\Migrations\\20241123112914_initDb.cs",
+              "RelativeToolTip": "WebMediHome\\Migrations\\20241123112914_initDb.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-23T11:29:14.432Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "IAutorInterface.cs",
+              "DocumentMoniker": "C:\\Users\\moyses\\Desktop\\TCC\\medihome\\Back-end\\WebMediHome\\Services\\Autor\\IAutorInterface.cs",
+              "RelativeDocumentMoniker": "WebMediHome\\Services\\Autor\\IAutorInterface.cs",
+              "ToolTip": "C:\\Users\\moyses\\Desktop\\TCC\\medihome\\Back-end\\WebMediHome\\Services\\Autor\\IAutorInterface.cs",
+              "RelativeToolTip": "WebMediHome\\Services\\Autor\\IAutorInterface.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-23T11:26:11.335Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "IUserService.cs",
+              "DocumentMoniker": "C:\\Users\\moyses\\Desktop\\TCC\\medihome\\Back-end\\WebMediHome\\Services\\User\\IUserService.cs",
+              "RelativeDocumentMoniker": "WebMediHome\\Services\\User\\IUserService.cs",
+              "ToolTip": "C:\\Users\\moyses\\Desktop\\TCC\\medihome\\Back-end\\WebMediHome\\Services\\User\\IUserService.cs",
+              "RelativeToolTip": "WebMediHome\\Services\\User\\IUserService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAjAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-23T11:26:17.87Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "UserModel.cs",
+              "DocumentMoniker": "C:\\Users\\moyses\\Desktop\\TCC\\medihome\\Back-end\\WebMediHome\\Model\\UserModel.cs",
+              "RelativeDocumentMoniker": "WebMediHome\\Model\\UserModel.cs",
+              "ToolTip": "C:\\Users\\moyses\\Desktop\\TCC\\medihome\\Back-end\\WebMediHome\\Model\\UserModel.cs",
+              "RelativeToolTip": "WebMediHome\\Model\\UserModel.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-23T11:27:47.992Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "UserService.cs",
+              "DocumentMoniker": "C:\\Users\\moyses\\Desktop\\TCC\\medihome\\Back-end\\WebMediHome\\Services\\User\\UserService.cs",
+              "RelativeDocumentMoniker": "WebMediHome\\Services\\User\\UserService.cs",
+              "ToolTip": "C:\\Users\\moyses\\Desktop\\TCC\\medihome\\Back-end\\WebMediHome\\Services\\User\\UserService.cs",
+              "RelativeToolTip": "WebMediHome\\Services\\User\\UserService.cs",
+              "ViewState": "AgIAABgAAAAAAAAAAAAowAsAAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-23T11:26:20.711Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "AppDbContext.cs",
+              "DocumentMoniker": "C:\\Users\\moyses\\Desktop\\TCC\\medihome\\Back-end\\WebMediHome\\Data\\AppDbContext.cs",
+              "RelativeDocumentMoniker": "WebMediHome\\Data\\AppDbContext.cs",
+              "ToolTip": "C:\\Users\\moyses\\Desktop\\TCC\\medihome\\Back-end\\WebMediHome\\Data\\AppDbContext.cs",
+              "RelativeToolTip": "WebMediHome\\Data\\AppDbContext.cs",
+              "ViewState": "AgIAAAUAAAAAAAAAAAAQwAwAAAAzAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-23T11:25:03.75Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

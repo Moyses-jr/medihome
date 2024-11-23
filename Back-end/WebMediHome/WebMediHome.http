@@ -1,0 +1,6 @@
+@WebMediHome_HostAddress = http://localhost:5005
+
+GET {{WebMediHome_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###

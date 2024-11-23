@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.11.35327.3
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebMediHome", "WebMediHome\WebMediHome.csproj", "{618ED521-D5F0-4079-A336-7E4E3C5F324C}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{618ED521-D5F0-4079-A336-7E4E3C5F324C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{618ED521-D5F0-4079-A336-7E4E3C5F324C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{618ED521-D5F0-4079-A336-7E4E3C5F324C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{618ED521-D5F0-4079-A336-7E4E3C5F324C}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {F0BE52F6-FE7F-4493-BA06-E3A6645B357B}
+	EndGlobalSection
+EndGlobal
