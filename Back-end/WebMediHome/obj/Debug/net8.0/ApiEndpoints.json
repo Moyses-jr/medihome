@@ -278,7 +278,7 @@
     "Parameters": [
       {
         "Name": "model",
-        "Type": "WebMediHome.Model.AuthenticateRequest",
+        "Type": "WebMediHome.Dto.User.AuthenticateRequest",
         "IsRequired": true
       }
     ],

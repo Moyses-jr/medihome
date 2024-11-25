@@ -1,4 +1,5 @@
-﻿using WebMediHome.Model;
+﻿using WebMediHome.Dto.User;
+using WebMediHome.Model;
 
 namespace WebMediHome.Services.User
 {
@@ -7,6 +8,6 @@ namespace WebMediHome.Services.User
         Task<AuthenticateResponse?> Authenticate(AuthenticateRequest model);
         //Task<IEnumerable<UserModel>> GetAll();
         Task<UserModel?> GetById(int id);
-        Task<UserModel?> AddAndUpdateUser(UserModel userObj);
+        Task<ResponseModel<UserModel?>> AddAndUpdateUser(UserModel userObj);
     }
 }

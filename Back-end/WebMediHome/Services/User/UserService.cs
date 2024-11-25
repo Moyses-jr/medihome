@@ -4,6 +4,7 @@ using System.IdentityModel.Tokens.Jwt;
 using System.Security.Claims;
 using System.Text;
 using WebMediHome.Data;
+using WebMediHome.Dto.User;
 using WebMediHome.Model;
 
 namespace WebMediHome.Services.User
@@ -27,9 +28,12 @@ namespace WebMediHome.Services.User
         {
             return await _appDbContext.Users.FirstOrDefaultAsync(x => x.Id == id);
         }
-        public async Task<UserModel?> AddAndUpdateUser(UserModel userObj)
+        public async Task<ResponseModel<UserModel?>> AddAndUpdateUser(UserModel userObj)
         {
             bool isSuccess = false;
+            UserModel? updatedUser = null;
+            string message;
+
             if (userObj.Id > 0)
             {
                 var obj = await _appDbContext.Users.FirstOrDefaultAsync(c => c.Id == userObj.Id);
@@ -39,21 +43,50 @@ namespace WebMediHome.Services.User
                     obj.LastName = userObj.LastName;
                     _appDbContext.Users.Update(obj);
                     isSuccess = await _appDbContext.SaveChangesAsync() > 0;
+
+                    if (isSuccess)
+                    {
+                        updatedUser = obj;
+                        message = "Usuário atualizado com sucesso.";
+                    }
+                    else
+                    {
+                        message = "Falha ao atualizar o usuário.";
+                    }
+                }
+                else
+                {
+                    message = "Usuário não encontrado.";
                 }
             }
             else
             {
                 await _appDbContext.Users.AddAsync(userObj);
                 isSuccess = await _appDbContext.SaveChangesAsync() > 0;
+
+                if (isSuccess)
+                {
+                    updatedUser = userObj;
+                    message = "Usuário criado com sucesso.";
+                }
+                else
+                {
+                    message = "Falha ao criar o usuário.";
+                }
             }
 
-            return isSuccess ? userObj : null;
+            return new ResponseModel<UserModel?>
+            {
+                Dados = updatedUser,
+                Mensagem = message,
+                Status = isSuccess
+            };
 
         }
 
         public async Task<AuthenticateResponse?> Authenticate(AuthenticateRequest model)
         {
-            var user = await _appDbContext.Users.SingleOrDefaultAsync(x => x.Username == model.Username && x.Password == model.Password);
+            var user = await _appDbContext.Users.SingleOrDefaultAsync(x => x.Email == model.Email && x.Password == model.Password);
 
             if (user == null) return null;
 
