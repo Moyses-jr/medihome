@@ -3,7 +3,7 @@
 import { usePathname } from "next/navigation";
 import Sidebar from "@/components/sidebar";
 import React from "react";
-
+import { LoginContext } from "@/context/loginContext";
 const PUBLIC_ROUTES = ["/", "/register"];
 
 export default function LayoutSide({
@@ -17,8 +17,10 @@ export default function LayoutSide({
   return (
     <html lang="en">
       <body>
-        {!isPublicRoute && <Sidebar />}
-        {children}
+        <LoginContext>
+          {!isPublicRoute && <Sidebar />}
+          {children}
+        </LoginContext>
       </body>
     </html>
   );

@@ -29,7 +29,7 @@ export default function ProductCatalog() {
   const router = useRouter();
 
   useEffect(() => {
-    const isAuthenticated = localStorage.getItem("auth");
+    const isAuthenticated = localStorage.getItem("token");
     if (!isAuthenticated) {
       router.push("/");
     } else {

@@ -18,11 +18,13 @@ import {
   TooltipTrigger,
 } from "@radix-ui/react-tooltip";
 import { useRouter } from "next/navigation";
+import { useLogin } from "@/context/loginContext";
 
 const Sidebar = () => {
+  const { logout } = useLogin();
   const router = useRouter();
   const handleLogout = () => {
-    localStorage.removeItem("auth");
+    logout();
     router.push("/");
   };
 

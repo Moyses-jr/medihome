@@ -14,19 +14,26 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
+import { ErrorMessage, Field, Form, Formik } from "formik";
+import { loginSchemaYup } from "./loginSchemaYup";
+import { useLogin } from "@/context/loginContext";
+
+interface LoginProps {
+  email: string;
+  password: string;
+}
 
 export default function LoginPage() {
   const [isClient, setIsClient] = useState(false);
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
+  const { login } = useLogin();
   const router = useRouter();
 
-  const handleLogin = (e: any) => {
-    e.preventDefault();
-
-    if (email === "moi@gmail.com" && password === "123") {
-      localStorage.setItem("auth", "true");
+  const handleLogin = async (loginData: LoginProps) => {
+    try {
+      await login(loginData);
       router.push("/home");
+    } catch (error: any) {
+      console.error("Erro ao configurar a requisição:", error.message);
     }
   };
 
@@ -46,57 +53,77 @@ export default function LoginPage() {
               Inseria abaixo seu e-mail e senha
             </CardDescription>
           </CardHeader>
-          <form onSubmit={handleLogin}>
-            <CardContent>
-              <div className="space-y-4">
-                <div className="space-y-2">
-                  <Label htmlFor="email">E-mail</Label>
-                  <Input
-                    id="email"
-                    type="email"
-                    placeholder="moyifrs@example.com"
-                    required
-                    onChange={(e) => setEmail(e.target.value)}
-                  />
-                </div>
-                <div className="space-y-2">
-                  <Label htmlFor="password">Senha</Label>
-                  <Input
-                    id="password"
-                    type="password"
-                    required
-                    onChange={(e) => setPassword(e.target.value)}
-                  />
-                </div>
-                <div className="flex items-center space-x-2">
-                  <Checkbox id="remember" />
-                  <Label htmlFor="remember">Lembrar de mim</Label>
-                </div>
-              </div>
-            </CardContent>
-            <CardFooter className="flex flex-col space-y-4">
-              <Button type="submit" className="w-full">
-                Entrar
-              </Button>
-              <div className="text-sm text-center space-y-2">
-                <Link
-                  href="/forgot-password"
-                  className="text-primary hover:underline"
-                >
-                  Esqueceu a senha?
-                </Link>
-                <div>
-                  Não tem conta?{" "}
-                  <Link
-                    href="/register"
-                    className="text-primary hover:underline"
-                  >
-                    Cadastrar-se agora
-                  </Link>
-                </div>
-              </div>
-            </CardFooter>
-          </form>
+          <Formik
+            initialValues={{
+              email: "",
+              password: "",
+            }}
+            validationSchema={loginSchemaYup}
+            onSubmit={handleLogin}
+          >
+            {({ handleSubmit }) => (
+              <Form onSubmit={handleSubmit}>
+                <CardContent>
+                  <div className="space-y-4">
+                    <div className="space-y-2">
+                      <Label htmlFor="email">E-mail</Label>
+                      <Field
+                        name="email"
+                        type="email"
+                        placeholder="Seu email"
+                        as={Input}
+                      />
+                      <ErrorMessage
+                        name="email"
+                        component="div"
+                        className="text-red-500 text-sm"
+                      />
+                    </div>
+                    <div className="space-y-2">
+                      <Label htmlFor="password">Senha</Label>
+                      <Field
+                        name="password"
+                        type="password"
+                        placeholder="Sua senha"
+                        as={Input}
+                      />
+                      <ErrorMessage
+                        name="password"
+                        component="div"
+                        className="text-red-500 text-sm"
+                      />
+                    </div>
+                    <div className="flex items-center space-x-2">
+                      <Checkbox id="remember" />
+                      <Label htmlFor="remember">Lembrar de mim</Label>
+                    </div>
+                  </div>
+                </CardContent>
+                <CardFooter className="flex flex-col space-y-4">
+                  <Button type="submit" className="w-full">
+                    Entrar
+                  </Button>
+                  <div className="text-sm text-center space-y-2">
+                    <Link
+                      href="/forgot-password"
+                      className="text-primary hover:underline"
+                    >
+                      Esqueceu a senha?
+                    </Link>
+                    <div>
+                      Não tem conta?{" "}
+                      <Link
+                        href="/register"
+                        className="text-primary hover:underline"
+                      >
+                        Cadastrar-se agora
+                      </Link>
+                    </div>
+                  </div>
+                </CardFooter>
+              </Form>
+            )}
+          </Formik>
         </Card>
       </div>
     )

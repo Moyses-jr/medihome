@@ -1,5 +1,4 @@
 "use client";
-import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import {
   Card,
@@ -15,12 +14,23 @@ import { useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
 import { Formik, Form, Field, ErrorMessage } from "formik";
 import { validationSchema } from "./schemaYup";
+import api from "@/services/api";
 
 interface registerProps {
-  name: string;
   email: string;
+  firstName: string;
+  lastName: string;
   password: string;
   password2: string;
+}
+
+interface requestProps {
+  email: string;
+  firstName: string;
+  lastName: string;
+  password: string;
+  id: number;
+  isActive: boolean;
 }
 
 export default function Register() {
@@ -31,9 +41,29 @@ export default function Register() {
     setIsClient(true);
   }, []);
 
-  const handleSubmit = (values: registerProps) => {
-    console.log(values);
-    Router.push("/");
+  const handleSubmit = async (values: registerProps) => {
+    const { password2, ...rest } = values;
+
+    const data: requestProps = {
+      id: 0,
+      ...rest,
+      isActive: true,
+    };
+
+    try {
+      const response = await api.post("/Users", data);
+      console.log("Resposta do servidor:", response.data);
+      Router.push("/");
+    } catch (error: any) {
+      if (error.response) {
+        console.error("Erro no servidor:", error.response.data);
+        console.error("Código de status:", error.response.status);
+      } else if (error.request) {
+        console.error("Nenhuma resposta recebida:", error.request);
+      } else {
+        console.error("Erro ao configurar a requisição:", error.message);
+      }
+    }
   };
 
   return (
@@ -52,7 +82,8 @@ export default function Register() {
             <Formik
               initialValues={{
                 email: "",
-                name: "",
+                firstName: "",
+                lastName: "",
                 password: "",
                 password2: "",
               }}
@@ -76,17 +107,31 @@ export default function Register() {
                         className="text-red-500 text-sm"
                       />
                     </div>
-                    <div className="space-y-4">
-                      <div className="space-y-2">
+                    <div className="flex space-x-2">
+                      <div className="flex-1 mr-1 ">
                         <Label htmlFor="name">Nome</Label>
                         <Field
-                          name="name"
+                          name="firstName"
                           type="text"
                           placeholder="Nome aqui"
                           as={Input}
                         />
                         <ErrorMessage
-                          name="name"
+                          name="firstName"
+                          component="div"
+                          className="text-red-500 text-sm"
+                        />
+                      </div>
+                      <div className="flex-1">
+                        <Label htmlFor="name">Sobrenome</Label>
+                        <Field
+                          name="lastName"
+                          type="text"
+                          placeholder="Sobrenome aqui"
+                          as={Input}
+                        />
+                        <ErrorMessage
+                          name="lastName"
                           component="div"
                           className="text-red-500 text-sm"
                         />
