@@ -4,6 +4,7 @@ import "./globals.css";
 import React from "react";
 import { cn } from "@/lib/utils";
 import LayoutSide from "./layoutSide";
+import { Toaster } from "@/components/ui/toaster";
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
@@ -27,12 +28,13 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" suppressHydrationWarning={true}>
+    <html lang="pt-BR" suppressHydrationWarning={true}>
       <body
         className={cn(
           `min-h-screen bg-background font-sans ${geistSans.variable} ${geistMono.variable} antialiased`
         )}
       >
+        <Toaster />
         <LayoutSide>{children}</LayoutSide>
       </body>
     </html>

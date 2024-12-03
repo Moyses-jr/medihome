@@ -24,9 +24,9 @@ namespace WebMediHome.Services.User
             return await _appDbContext.Users.Where(x => x.IsActive == true).ToListAsync();
         }
 
-        public async Task<UserModel?> GetById(int id)
+        public async Task<UserModel?> GetUserId(int id)
         {
-            return await _appDbContext.Users.FirstOrDefaultAsync(x => x.Id == id);
+            return await _appDbContext.Users.FirstOrDefaultAsync(x => x.IdUser == id);
         }
         public async Task<ResponseModel<UserModel?>> AddAndUpdateUser(UserModel userObj)
         {
@@ -34,9 +34,9 @@ namespace WebMediHome.Services.User
             UserModel? updatedUser = null;
             string message;
 
-            if (userObj.Id > 0)
+            if (userObj.IdUser > 0)
             {
-                var obj = await _appDbContext.Users.FirstOrDefaultAsync(c => c.Id == userObj.Id);
+                var obj = await _appDbContext.Users.FirstOrDefaultAsync(c => c.IdUser == userObj.IdUser);
                 if (obj != null)
                 {
                     obj.FirstName = userObj.FirstName;
@@ -105,7 +105,7 @@ namespace WebMediHome.Services.User
                 var key = Encoding.ASCII.GetBytes(_appSettings.Secret);
                 var tokenDescriptor = new SecurityTokenDescriptor
                 {
-                    Subject = new ClaimsIdentity(new[] { new Claim("Id", user.Id.ToString()) }),
+                    Subject = new ClaimsIdentity(new[] { new Claim("IdUser", user.IdUser.ToString()) }),
                     Expires = DateTime.UtcNow.AddSeconds(60),
                     SigningCredentials = new SigningCredentials(new SymmetricSecurityKey(key), SecurityAlgorithms.HmacSha256Signature)
                 };

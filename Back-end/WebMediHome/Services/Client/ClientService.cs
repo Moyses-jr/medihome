@@ -1,5 +1,4 @@
-﻿using Microsoft.EntityFrameworkCore;
-using WebMediHome.Data;
+﻿using WebMediHome.Data;
 using WebMediHome.Model;
 
 namespace WebMediHome.Services.Client
@@ -23,6 +22,13 @@ namespace WebMediHome.Services.Client
             return await _dbContext.Clients.FindAsync(id);
         }
 
+        public async Task<ClientModel?> GetClientByIdUserAsync(int idUser)
+        {
+            // Consulta o banco de dados para encontrar o cliente com o IdUser informado
+            return await _dbContext.Clients
+                .FirstOrDefaultAsync(c => c.IdUser == idUser);
+        }
+
         public async Task AddClientAsync(ClientModel client)
         {
             await _dbContext.Clients.AddAsync(client);
@@ -36,7 +42,6 @@ namespace WebMediHome.Services.Client
             {
                 existingClient.FirstName = client.FirstName;
                 existingClient.LastName = client.LastName;
-                existingClient.Password = client.Password;
                 existingClient.CPF = client.CPF;
                 existingClient.Email = client.Email;
                 existingClient.PhoneNumber = client.PhoneNumber;

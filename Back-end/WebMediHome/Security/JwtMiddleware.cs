@@ -51,7 +51,7 @@ namespace WebMediHome.Security
                 var userId = int.Parse(userIdClaim.Value);
 
                 // Vincular o usuário ao contexto
-                var user = await userService.GetById(userId);
+                var user = await userService.GetUserId(userId);
                 if (user != null)
                 {
                     context.Items["User"] = user;

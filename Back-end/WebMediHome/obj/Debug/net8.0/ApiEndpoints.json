@@ -43,9 +43,9 @@
   },
   {
     "ContainingType": "WebMediHome.Controllers.ClientController",
-    "Method": "GetClientById",
+    "Method": "DeleteClient",
     "RelativePath": "api/Client/{id}",
-    "HttpMethod": "GET",
+    "HttpMethod": "DELETE",
     "IsController": true,
     "Order": 0,
     "Parameters": [
@@ -60,13 +60,13 @@
   {
     "ContainingType": "WebMediHome.Controllers.ClientController",
     "Method": "UpdateClient",
-    "RelativePath": "api/Client/{id}",
+    "RelativePath": "api/Client/{idUser}",
     "HttpMethod": "PUT",
     "IsController": true,
     "Order": 0,
     "Parameters": [
       {
-        "Name": "id",
+        "Name": "idUser",
         "Type": "System.Int32",
         "IsRequired": true
       },
@@ -80,14 +80,30 @@
   },
   {
     "ContainingType": "WebMediHome.Controllers.ClientController",
-    "Method": "DeleteClient",
-    "RelativePath": "api/Client/{id}",
-    "HttpMethod": "DELETE",
+    "Method": "GetClientById",
+    "RelativePath": "api/Client/c/{id}",
+    "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
     "Parameters": [
       {
         "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "WebMediHome.Controllers.ClientController",
+    "Method": "GetClientByIdUser",
+    "RelativePath": "api/Client/u/{idUser}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "idUser",
         "Type": "System.Int32",
         "IsRequired": true
       }
@@ -232,6 +248,43 @@
     "ReturnTypes": []
   },
   {
+    "ContainingType": "WebMediHome.Controllers.ProfileController",
+    "Method": "GetProfileById",
+    "RelativePath": "api/Profile/{idUser}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "idUser",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "WebMediHome.Controllers.ProfileController",
+    "Method": "UpdateProfile",
+    "RelativePath": "api/Profile/{idUser}",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "idUser",
+        "Type": "System.Int32",
+        "IsRequired": true
+      },
+      {
+        "Name": "updatedProfile",
+        "Type": "WebMediHome.Model.ClientModel",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
     "ContainingType": "WebMediHome.Controllers.UsersController",
     "Method": "Post",
     "RelativePath": "api/Users",
@@ -263,6 +316,22 @@
       {
         "Name": "userObj",
         "Type": "WebMediHome.Model.UserModel",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "WebMediHome.Controllers.UsersController",
+    "Method": "GetUserId",
+    "RelativePath": "api/Users/{id}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
         "IsRequired": true
       }
     ],

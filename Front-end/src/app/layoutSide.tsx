@@ -12,16 +12,14 @@ export default function LayoutSide({
   children: React.ReactNode;
 }>) {
   const pathname = usePathname();
-  const isPublicRoute = PUBLIC_ROUTES.includes(pathname);
+  const isPublicRoute: boolean = pathname
+    ? PUBLIC_ROUTES.includes(pathname)
+    : false;
 
   return (
-    <html lang="en">
-      <body>
-        <LoginContext>
-          {!isPublicRoute && <Sidebar />}
-          {children}
-        </LoginContext>
-      </body>
-    </html>
+    <LoginContext>
+      {!isPublicRoute && <Sidebar />}
+      {children}
+    </LoginContext>
   );
 }

@@ -7,7 +7,6 @@ namespace WebMediHome.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    [Authorize]
     public class ClientController : ControllerBase
     {
         private readonly IClientService _clientService;
@@ -24,12 +23,23 @@ namespace WebMediHome.Controllers
             return Ok(clients);
         }
 
-        [HttpGet("{id}")]
+        [HttpGet("c/{id}")]
         public async Task<IActionResult> GetClientById(int id)
         {
             var client = await _clientService.GetClientByIdAsync(id);
             if (client == null)
                 return NotFound();
+
+            return Ok(client);
+        }
+
+        [HttpGet("u/{idUser}")]
+        public async Task<IActionResult> GetClientByIdUser(int idUser)
+        {
+            var client = await _clientService.GetClientByIdUserAsync(idUser);
+
+            if (client == null)
+                return NotFound(new { message = "No client associated with this IdUser" });
 
             return Ok(client);
         }
@@ -41,15 +51,16 @@ namespace WebMediHome.Controllers
             return CreatedAtAction(nameof(GetClientById), new { id = client.IdClient }, client);
         }
 
-        [HttpPut("{id}")]
-        public async Task<IActionResult> UpdateClient(int id, ClientModel client)
+        [HttpPut("{idUser}")]
+        public async Task<IActionResult> UpdateClient(int idUser, ClientModel client)
         {
-            if (id != client.IdClient)
+            if (idUser != client.IdClient)
                 return BadRequest();
 
             await _clientService.UpdateClientAsync(client);
             return NoContent();
         }
+
 
         [HttpDelete("{id}")]
         public async Task<IActionResult> DeleteClient(int id)

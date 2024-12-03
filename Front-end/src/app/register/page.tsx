@@ -15,6 +15,7 @@ import { useRouter } from "next/navigation";
 import { Formik, Form, Field, ErrorMessage } from "formik";
 import { validationSchema } from "./schemaYup";
 import api from "@/services/api";
+import { toast } from "@/hooks/use-toast";
 
 interface registerProps {
   email: string;
@@ -42,6 +43,7 @@ export default function Register() {
   }, []);
 
   const handleSubmit = async (values: registerProps) => {
+    // eslint-disable-next-line no-unused-vars
     const { password2, ...rest } = values;
 
     const data: requestProps = {
@@ -51,8 +53,18 @@ export default function Register() {
     };
 
     try {
-      const response = await api.post("/Users", data);
-      console.log("Resposta do servidor:", response.data);
+      const { status } = await api.post("/Users", data);
+
+      if (status !== 200) {
+        toast({
+          title: "Não foi possível cadastrar o usuário",
+          variant: "destructive",
+        });
+      } else {
+        toast({
+          title: "Usuário criado com sucesso!",
+        });
+      }
       Router.push("/");
     } catch (error: any) {
       if (error.response) {

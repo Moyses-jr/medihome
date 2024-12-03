@@ -7,7 +7,6 @@ namespace WebMediHome.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    [Authorize]
     public class ProfessionalController : ControllerBase
     {
         private readonly IProfessionalService _professionalService;

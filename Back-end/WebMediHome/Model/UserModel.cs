@@ -1,8 +1,12 @@
-﻿namespace WebMediHome.Model
+﻿using System.ComponentModel.DataAnnotations;
+
+namespace WebMediHome.Model
 {
     public class UserModel
     {
-        public int Id { get; set; }
+        [Key]
+        public int IdUser { get; set; }
+        public ICollection<ClientModel>? Client { get; set; }
         public required string FirstName { get; set; }
         public string LastName { get; set; } = string.Empty;
         public required string Email { get; set; }

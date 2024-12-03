@@ -7,7 +7,7 @@ namespace WebMediHome.Services.User
     {
         Task<AuthenticateResponse?> Authenticate(AuthenticateRequest model);
         //Task<IEnumerable<UserModel>> GetAll();
-        Task<UserModel?> GetById(int id);
+        Task<UserModel?> GetUserId(int id);
         Task<ResponseModel<UserModel?>> AddAndUpdateUser(UserModel userObj);
     }
 }

@@ -44,6 +44,9 @@ namespace WebMediHome.Migrations
                         .HasMaxLength(50)
                         .HasColumnType("varchar(50)");
 
+                    b.Property<int>("IdUser")
+                        .HasColumnType("int");
+
                     b.Property<bool>("IsActive")
                         .HasColumnType("tinyint(1)");
 
@@ -55,19 +58,19 @@ namespace WebMediHome.Migrations
                         .HasMaxLength(50)
                         .HasColumnType("varchar(50)");
 
-                    b.Property<string>("Password")
-                        .IsRequired()
-                        .HasMaxLength(100)
-                        .HasColumnType("varchar(100)");
-
                     b.Property<string>("PhoneNumber")
                         .IsRequired()
                         .HasColumnType("longtext");
+
+                    b.Property<DateOnly>("RegisterBorn")
+                        .HasColumnType("date");
 
                     b.Property<DateOnly>("RegisterDate")
                         .HasColumnType("date");
 
                     b.HasKey("IdClient");
+
+                    b.HasIndex("IdUser");
 
                     b.ToTable("Clients");
                 });
@@ -143,11 +146,11 @@ namespace WebMediHome.Migrations
 
             modelBuilder.Entity("WebMediHome.Model.UserModel", b =>
                 {
-                    b.Property<int>("Id")
+                    b.Property<int>("IdUser")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int");
 
-                    MySqlPropertyBuilderExtensions.UseMySqlIdentityColumn(b.Property<int>("Id"));
+                    MySqlPropertyBuilderExtensions.UseMySqlIdentityColumn(b.Property<int>("IdUser"));
 
                     b.Property<string>("Email")
                         .IsRequired()
@@ -168,9 +171,20 @@ namespace WebMediHome.Migrations
                         .IsRequired()
                         .HasColumnType("longtext");
 
-                    b.HasKey("Id");
+                    b.HasKey("IdUser");
 
                     b.ToTable("Users");
+                });
+
+            modelBuilder.Entity("WebMediHome.Model.ClientModel", b =>
+                {
+                    b.HasOne("WebMediHome.Model.UserModel", "User")
+                        .WithMany("Client")
+                        .HasForeignKey("IdUser")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("User");
                 });
 
             modelBuilder.Entity("WebMediHome.Model.ClientProfessionalModel", b =>
@@ -200,6 +214,11 @@ namespace WebMediHome.Migrations
             modelBuilder.Entity("WebMediHome.Model.ProfessionalModel", b =>
                 {
                     b.Navigation("ClientProfessionals");
+                });
+
+            modelBuilder.Entity("WebMediHome.Model.UserModel", b =>
+                {
+                    b.Navigation("Client");
                 });
 #pragma warning restore 612, 618
         }

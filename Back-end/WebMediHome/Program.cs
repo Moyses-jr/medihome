@@ -1,9 +1,11 @@
 using Microsoft.OpenApi.Models;
+using System.Text.Json.Serialization;
 using WebMediHome.Data;
 using WebMediHome.Model;
 using WebMediHome.Security;
 using WebMediHome.Services.Client;
 using WebMediHome.Services.Professional;
+using WebMediHome.Services.Profile;
 using WebMediHome.Services.User;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -16,8 +18,9 @@ var connectionStrings = builder.Configuration.GetConnectionString("DefaultConnec
 
 builder.Services.Configure<AppSettings>(builder.Configuration.GetSection("AppSettings"));
 //var key = Encoding.ASCII.GetBytes(builder.Configuration["AppSettings:Secret"]);
+//builder.Services.Configure<Microsoft.AspNetCore.Http.Json.JsonOptions>(options => options.SerializerOptions.ReferenceHandler = ReferenceHandler.IgnoreCycles);
 
-//builder.Services.AddScoped<IAutorInterface, AutorService>();
+builder.Services.AddScoped<IProfileService, ProfileService>();
 builder.Services.AddScoped<IUserService, UserService>();
 builder.Services.AddScoped<IClientService, ClientService>();
 builder.Services.AddScoped<IProfessionalService, ProfessionalService>();

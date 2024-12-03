@@ -1,4 +1,5 @@
 ﻿using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace WebMediHome.Model
 {
@@ -6,6 +7,10 @@ namespace WebMediHome.Model
     {
         [Key]
         public int IdClient { get; set; }
+        public int IdUser { get; set; }
+
+        [ForeignKey("IdUser")]
+        public UserModel? User { get; set; }
 
         [Required]
         [StringLength(50)]
@@ -14,10 +19,6 @@ namespace WebMediHome.Model
         [Required]
         [StringLength(50)]
         public string LastName { get; set; } = string.Empty;
-
-        [Required]
-        [StringLength(100)]
-        public string Password { get; set; } = string.Empty;
 
         [Required]
         [StringLength(11, MinimumLength = 11, ErrorMessage = "CPF deve conter 11 dígitos.")]
@@ -37,6 +38,7 @@ namespace WebMediHome.Model
 
         [Required]
         public DateOnly RegisterDate { get; set; }
+        public DateOnly RegisterBorn { get; set; }
         public ICollection<ClientProfessionalModel> ClientProfessionals { get; set; } = new List<ClientProfessionalModel>();
     }
 

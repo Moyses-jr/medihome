@@ -1,13 +1,7 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import Image from "next/image";
-import esg from "../../assets/esgProfisional.jpeg";
-import prom from "../../assets/promissora.jpg";
-import loira from "../../assets/loriraDe_rosa.jpg";
-import medico from "../../assets/medicoFerramenta.jpg";
-import loira2 from "../../assets/loiraDiferenciada.jpg";
-import lei from "../../assets/retrato_profissional_de_advogado.jpg";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import {
   Select,
@@ -18,28 +12,22 @@ import {
 } from "@/components/ui/select";
 import { Input } from "@/components/ui/input";
 import Link from "next/link";
-import { useRouter } from "next/navigation";
 import products from "./listProduct";
 
 export default function ProductCatalog() {
   const [searchTerm, setSearchTerm] = useState("");
   const [sortOrder, setSortOrder] = useState("name");
 
-  const [loading, setLoading] = useState(true);
-  const router = useRouter();
+  // useEffect(() => {
+  //   const handlerSession = async () => {
+  //     const session = await getServerSession();
+  //     if (!session) {
+  //       redirect("/");
+  //     }
+  //   };
+  //   handlerSession();
+  // }, []);
 
-  useEffect(() => {
-    const isAuthenticated = localStorage.getItem("token");
-    if (!isAuthenticated) {
-      router.push("/");
-    } else {
-      setLoading(false);
-    }
-  }, [router]);
-
-  if (loading) {
-    return <p></p>;
-  }
   const filteredAndSortedProducts = products
     .filter((product) =>
       product.name.toLowerCase().includes(searchTerm.toLowerCase())

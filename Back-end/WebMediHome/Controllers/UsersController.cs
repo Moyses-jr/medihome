@@ -20,7 +20,7 @@ namespace WebMediHome.Controllers
         [HttpPost]
         public async Task<IActionResult> Post([FromBody] UserModel userObj)
         {
-            userObj.Id = 0;
+            userObj.IdUser = 0;
             return Ok(await _userService.AddAndUpdateUser(userObj));
         }
     
@@ -28,17 +28,25 @@ namespace WebMediHome.Controllers
         [Authorize]
         public async Task<IActionResult> Put(int id, [FromBody] UserModel userObj)
         {
-            userObj.Id = id;
+            userObj.IdUser = id;
             return Ok(await _userService.AddAndUpdateUser(userObj));
         }
-    
+
+        [HttpGet("{id}")]
+        public async Task<IActionResult> GetUserId(int id)
+        {
+            var user = await _userService.GetUserId(id);
+
+            if (user == null)
+                return NotFound(new { message = "Usuário não encontrado" });
+
+            return Ok(user);
+        }
+
         [HttpPost("login")]
         public async Task<IActionResult> Login(AuthenticateRequest model)
         {
             var response = await _userService.Authenticate(model);
-    
-            if (response == null)
-                return BadRequest(new { message = "Username or password is incorrect" });
     
             return Ok(response);
         }

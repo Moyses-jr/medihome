@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import Image from "next/image";
-import { Star, Plus, Minus, ShoppingCart } from "lucide-react";
+import { Star, ShoppingCart } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import {
   Card,
@@ -13,8 +13,11 @@ import {
   CardTitle,
 } from "@/components/ui/card";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
-import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
+import { Avatar, AvatarFallback } from "@/components/ui/avatar";
 import products from "@/app/home/listProduct";
+import api from "@/services/api";
+import { useRouter } from "next/navigation";
+import { ClientModel } from "@/domain/Client/types";
 
 const reviews = [
   {
@@ -40,28 +43,54 @@ const reviews = [
   },
 ];
 
-interface ProductProps {
-  id: number;
-  name: string;
-  price: number;
-  rating: number;
-  reviewCount: number;
-  description: string;
-  images: string; // ou `string[]` se for um array de URLs de imagens
-}
-
-export default function ProductDetails({ params }: { params: { id: string } }) {
-  const { id } = params;
-  const product = products.find((product) => product.id === Number(id));
-  const [quantity, setQuantity] = useState(1);
+export default function ProductDetails({
+  params,
+}: {
+  params: { idProfesional: string };
+}) {
+  const [user, setUser] = useState<ClientModel>();
+  const { idProfesional } = params;
+  const product = products.find(
+    (product) => product.id === Number(idProfesional)
+  );
+  const router = useRouter();
 
   if (!product) {
-    return <p>Produto não encontrado.</p>;
+    return (
+      <div className="flex justify-center items-start h-screen">
+        <p>Produto não encontrado.</p>;
+      </div>
+    );
   }
 
-  const incrementQuantity = () => setQuantity((prev) => prev + 1);
-  const decrementQuantity = () =>
-    setQuantity((prev) => (prev > 1 ? prev - 1 : 1));
+  const handlerBuy = async () => {
+    const idUser = localStorage.getItem("idUser");
+
+    try {
+      const { data: userData } = await api.get<ClientModel>(
+        `/Client/u/${idUser}`
+      );
+
+      setUser(userData);
+    } catch (error: any) {
+      if (error.status === 404) {
+        router.push("/registerClient");
+      } else {
+        console.log("Erro:", error.response.data);
+      }
+      return;
+    }
+
+    if (user) {
+      try {
+        const { data: userData } = await api.post(
+          `professional/${idProfesional}/clients/${user.idClient}`
+        );
+      } catch (error: any) {
+        console.log("Erro:", error.response.data);
+      }
+    }
+  };
 
   return (
     <div className="sm:ml-14 container mx-auto px-4 py-8">
@@ -110,16 +139,7 @@ export default function ProductDetails({ params }: { params: { id: string } }) {
           <p className="text-3xl font-bold">${product.price.toFixed(2)}</p>
           <p className="text-gray-600">{product.description}</p>
           <div className="flex items-center space-x-4">
-            <div className="flex items-center border rounded-md">
-              <Button variant="outline" size="icon" onClick={decrementQuantity}>
-                <Minus className="h-4 w-4" />
-              </Button>
-              <span className="px-4">{quantity}</span>
-              <Button variant="outline" size="icon" onClick={incrementQuantity}>
-                <Plus className="h-4 w-4" />
-              </Button>
-            </div>
-            <Button className="flex-1">
+            <Button className="flex-1" onClick={handlerBuy}>
               <ShoppingCart className="mr-2 h-4 w-4" /> Contratar
             </Button>
           </div>
@@ -129,7 +149,7 @@ export default function ProductDetails({ params }: { params: { id: string } }) {
       <Tabs defaultValue="details" className="mt-12">
         <TabsList>
           <TabsTrigger value="details">
-            Detalhes do profissional {id}
+            Detalhes do profissional {idProfesional}
           </TabsTrigger>
           <TabsTrigger value="reviews">Avaliações</TabsTrigger>
         </TabsList>

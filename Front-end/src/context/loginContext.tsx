@@ -1,49 +1,34 @@
 import { createContext, useContext, useState, ReactNode } from "react";
-import Cookies from "js-cookie";
 import api from "@/services/api";
-
-interface User {
-  id: string;
-  firstName: string;
-  lastName: string;
-  email: string;
-}
-
-interface LoginProps {
-  email: string;
-  password: string;
-}
-
-interface AuthContextData {
-  user: User | null;
-  // eslint-disable-next-line no-unused-vars
-  login: (loginData: LoginProps) => Promise<void>;
-  logout: () => void;
-}
+import { AuthContextData, LoginProps, User } from "@/domain/User/types";
 
 const AuthContext = createContext<AuthContextData | undefined>(undefined);
 
 export const LoginContext = ({ children }: { children: ReactNode }) => {
   const [user, setUser] = useState<User | null>(null);
 
-  const login = async (loginData: LoginProps) => {
+  async function login(loginData: LoginProps) {
     try {
-      const response = await api.post("/Users/Login", loginData);
-      const { token, id, ...userData } = response.data;
+      const response = await api.post<User>("/Users/Login", loginData);
+      const { token, idUser } = response.data;
 
-      if (token && id) {
+      if (token && idUser) {
         console.log(`entrou aqui`);
         localStorage.setItem("token", token);
+        localStorage.setItem("idUser", idUser);
 
-        setUser(userData);
+        setUser(response.data);
       }
+      return idUser;
     } catch (error: any) {
       console.error("Erro ao autenticar:", error.message);
+      return null;
     }
-  };
+  }
 
   const logout = () => {
     localStorage.removeItem("token");
+    localStorage.removeItem("idUser");
     setUser(null);
   };
 
