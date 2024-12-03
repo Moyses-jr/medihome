@@ -15,35 +15,46 @@ import { ErrorMessage, Field, Form, Formik } from "formik";
 import { profileValidation } from "./schemaYup";
 import api from "@/services/api";
 import { Label } from "@/components/ui/label";
-import { ClientModel } from "@/domain/Client/types";
+import { ClientModel, UpdateUserProps } from "@/domain/Client/types";
 import { useEffect, useState } from "react";
 
 export default function ProfileChangePage() {
   const [initialValues, setInitialValues] = useState<ClientModel | null>(null);
 
+  const fetchProfile = async () => {
+    const idUser = localStorage.getItem("idUser");
+    try {
+      const response = await api.get(`/profile/${idUser}`);
+      setInitialValues(response.data);
+    } catch (error) {
+      console.error("Erro ao buscar os dados do perfil:", error);
+      toast({
+        title: "Erro ao buscar os dados do perfil:",
+        variant: "destructive",
+      });
+    }
+  };
   useEffect(() => {
-    const fetchProfile = async () => {
-      const idUser = localStorage.getItem("idUser");
-      try {
-        const response = await api.get(`/profile/${idUser}`);
-        setInitialValues(response.data);
-      } catch (error) {
-        console.error("Erro ao buscar os dados do perfil:", error);
-      }
-    };
     fetchProfile();
   }, []);
 
   const handlerProfile = async (values: ClientModel) => {
+    const data: UpdateUserProps = { ...values };
     try {
-      const { status } = await api.put("/api/profile", values); // Endpoint para atualizar os dados
+      const idUser = localStorage.getItem("idUser");
+      await api.put(`/profile/${idUser}`, data);
+
+      fetchProfile();
+
       toast({
-        title: "Perfil atualizado",
-        description: "Seu perfil foi atualizado com sucesso.",
+        title: "Seu perfil foi atualizado com sucesso.",
       });
     } catch (error) {
       console.error("Erro ao atualizar o perfil:", error);
-      alert("Erro ao atualizar o perfil.");
+      toast({
+        title: "Erro ao atualizar o perfil",
+        variant: "destructive",
+      });
     }
   };
 
@@ -198,7 +209,7 @@ export default function ProfileChangePage() {
                     <Label htmlFor="password2">Confirmar senha</Label>
                     <Field
                       name="password2"
-                      type="password2"
+                      type="password"
                       placeholder="Digite novamentes"
                       as={Input}
                     />

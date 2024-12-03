@@ -16,6 +16,16 @@ export interface ClientModel {
   registerBorn: string;
 }
 
+export interface UpdateUserProps {
+  firstName: string;
+  lastName: string;
+  password: string;
+  cpf: string;
+  email: string;
+  phoneNumber: string;
+  registerBorn: string;
+}
+
 export interface requestProps {
   idUser?: number;
   email?: string;
