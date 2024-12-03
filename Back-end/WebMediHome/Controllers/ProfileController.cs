@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using WebMediHome.Dto.Profile;
 using WebMediHome.Model;
 using WebMediHome.Services.Profile;
 
@@ -27,12 +28,31 @@ namespace WebMediHome.Controllers
         }
 
         [HttpPut("{idUser}")]
-        public async Task<IActionResult> UpdateProfile(int idUser, [FromBody] ClientModel updatedProfile)
+        public async Task<IActionResult> UpdateProfile(int idUser, [FromBody] UpdateProfileDTO updatedProfile)
         {
-            var success = await _profileService.UpdateProfileAsync(idUser, updatedProfile);
+            if (updatedProfile == null)
+            {
+                return BadRequest("Os dados do perfil não podem estar vazios.");
+            }
+
+            var success = await _profileService.UpdateProfileAsync(
+                idUser,
+                new ClientModel
+                {
+                    FirstName = updatedProfile.FirstName,
+                    LastName = updatedProfile.LastName,
+                    Email = updatedProfile.Email,
+                    CPF = updatedProfile.CPF,
+                    PhoneNumber = updatedProfile.PhoneNumber,
+                    RegisterBorn = updatedProfile.RegisterBorn,
+                },
+                updatedProfile.Password
+            );
 
             if (!success)
+            {
                 return BadRequest("Erro ao atualizar o perfil.");
+            }
 
             return Ok("Perfil atualizado com sucesso.");
         }

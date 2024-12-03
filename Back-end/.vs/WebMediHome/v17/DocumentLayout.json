@@ -3,28 +3,28 @@
   "WorkspaceRootPath": "C:\\Users\\moyses\\Desktop\\TCC\\medihome\\Back-end\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{618ED521-D5F0-4079-A336-7E4E3C5F324C}|WebMediHome\\WebMediHome.csproj|c:\\users\\moyses\\desktop\\tcc\\medihome\\back-end\\webmedihome\\dto\\user\\userdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{618ED521-D5F0-4079-A336-7E4E3C5F324C}|WebMediHome\\WebMediHome.csproj|solutionrelative:webmedihome\\dto\\user\\userdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{618ED521-D5F0-4079-A336-7E4E3C5F324C}|WebMediHome\\WebMediHome.csproj|c:\\users\\moyses\\desktop\\tcc\\medihome\\back-end\\webmedihome\\model\\usermodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{618ED521-D5F0-4079-A336-7E4E3C5F324C}|WebMediHome\\WebMediHome.csproj|solutionrelative:webmedihome\\model\\usermodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{618ED521-D5F0-4079-A336-7E4E3C5F324C}|WebMediHome\\WebMediHome.csproj|c:\\users\\moyses\\desktop\\tcc\\medihome\\back-end\\webmedihome\\controllers\\profilecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{618ED521-D5F0-4079-A336-7E4E3C5F324C}|WebMediHome\\WebMediHome.csproj|solutionrelative:webmedihome\\controllers\\profilecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{618ED521-D5F0-4079-A336-7E4E3C5F324C}|WebMediHome\\WebMediHome.csproj|c:\\users\\moyses\\desktop\\tcc\\medihome\\back-end\\webmedihome\\services\\profile\\profileservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{618ED521-D5F0-4079-A336-7E4E3C5F324C}|WebMediHome\\WebMediHome.csproj|solutionrelative:webmedihome\\services\\profile\\profileservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{618ED521-D5F0-4079-A336-7E4E3C5F324C}|WebMediHome\\WebMediHome.csproj|c:\\users\\moyses\\desktop\\tcc\\medihome\\back-end\\webmedihome\\model\\clientmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{618ED521-D5F0-4079-A336-7E4E3C5F324C}|WebMediHome\\WebMediHome.csproj|solutionrelative:webmedihome\\model\\clientmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{618ED521-D5F0-4079-A336-7E4E3C5F324C}|WebMediHome\\WebMediHome.csproj|c:\\users\\moyses\\desktop\\tcc\\medihome\\back-end\\webmedihome\\dto\\profile\\updateprofiledto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{618ED521-D5F0-4079-A336-7E4E3C5F324C}|WebMediHome\\WebMediHome.csproj|solutionrelative:webmedihome\\dto\\profile\\updateprofiledto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{618ED521-D5F0-4079-A336-7E4E3C5F324C}|WebMediHome\\WebMediHome.csproj|c:\\users\\moyses\\desktop\\tcc\\medihome\\back-end\\webmedihome\\properties\\launchsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{618ED521-D5F0-4079-A336-7E4E3C5F324C}|WebMediHome\\WebMediHome.csproj|solutionrelative:webmedihome\\properties\\launchsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{618ED521-D5F0-4079-A336-7E4E3C5F324C}|WebMediHome\\WebMediHome.csproj|c:\\users\\moyses\\desktop\\tcc\\medihome\\back-end\\webmedihome\\services\\profile\\iprofileservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{618ED521-D5F0-4079-A336-7E4E3C5F324C}|WebMediHome\\WebMediHome.csproj|solutionrelative:webmedihome\\services\\profile\\iprofileservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{618ED521-D5F0-4079-A336-7E4E3C5F324C}|WebMediHome\\WebMediHome.csproj|c:\\users\\moyses\\desktop\\tcc\\medihome\\back-end\\webmedihome\\controllers\\profilecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{618ED521-D5F0-4079-A336-7E4E3C5F324C}|WebMediHome\\WebMediHome.csproj|solutionrelative:webmedihome\\controllers\\profilecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{618ED521-D5F0-4079-A336-7E4E3C5F324C}|WebMediHome\\WebMediHome.csproj|c:\\users\\moyses\\desktop\\tcc\\medihome\\back-end\\webmedihome\\controllers\\clientcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{618ED521-D5F0-4079-A336-7E4E3C5F324C}|WebMediHome\\WebMediHome.csproj|solutionrelative:webmedihome\\controllers\\clientcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -34,58 +34,19 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 2,
+          "SelectedChildIndex": 3,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "UserModel.cs",
-              "DocumentMoniker": "C:\\Users\\moyses\\Desktop\\TCC\\medihome\\Back-end\\WebMediHome\\Model\\UserModel.cs",
-              "RelativeDocumentMoniker": "WebMediHome\\Model\\UserModel.cs",
-              "ToolTip": "C:\\Users\\moyses\\Desktop\\TCC\\medihome\\Back-end\\WebMediHome\\Model\\UserModel.cs",
-              "RelativeToolTip": "WebMediHome\\Model\\UserModel.cs",
-              "ViewState": "AgIAAAMAAAAAAAAAAAAAAAwAAAA8AAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-03T00:16:20.161Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "ClientModel.cs",
-              "DocumentMoniker": "C:\\Users\\moyses\\Desktop\\TCC\\medihome\\Back-end\\WebMediHome\\Model\\ClientModel.cs",
-              "RelativeDocumentMoniker": "WebMediHome\\Model\\ClientModel.cs",
-              "ToolTip": "C:\\Users\\moyses\\Desktop\\TCC\\medihome\\Back-end\\WebMediHome\\Model\\ClientModel.cs",
-              "RelativeToolTip": "WebMediHome\\Model\\ClientModel.cs",
-              "ViewState": "AgIAABsAAAAAAAAAAAAmwCcAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-03T00:14:26.025Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "UserDTO.cs",
-              "DocumentMoniker": "C:\\Users\\moyses\\Desktop\\TCC\\medihome\\Back-end\\WebMediHome\\Dto\\User\\UserDTO.cs",
-              "RelativeDocumentMoniker": "WebMediHome\\Dto\\User\\UserDTO.cs",
-              "ToolTip": "C:\\Users\\moyses\\Desktop\\TCC\\medihome\\Back-end\\WebMediHome\\Dto\\User\\UserDTO.cs",
-              "RelativeToolTip": "WebMediHome\\Dto\\User\\UserDTO.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAA4AAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-02T23:57:41.255Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
               "DocumentIndex": 2,
-              "Title": "ProfileService.cs",
-              "DocumentMoniker": "C:\\Users\\moyses\\Desktop\\TCC\\medihome\\Back-end\\WebMediHome\\Services\\Profile\\ProfileService.cs",
-              "RelativeDocumentMoniker": "WebMediHome\\Services\\Profile\\ProfileService.cs",
-              "ToolTip": "C:\\Users\\moyses\\Desktop\\TCC\\medihome\\Back-end\\WebMediHome\\Services\\Profile\\ProfileService.cs",
-              "RelativeToolTip": "WebMediHome\\Services\\Profile\\ProfileService.cs",
-              "ViewState": "AgIAABUAAAAAAAAAAAAowDEAAAApAAAAAAAAAA==",
+              "Title": "UpdateProfileDTO.cs",
+              "DocumentMoniker": "C:\\Users\\moyses\\Desktop\\TCC\\medihome\\Back-end\\WebMediHome\\Dto\\Profile\\UpdateProfileDTO.cs",
+              "RelativeDocumentMoniker": "WebMediHome\\Dto\\Profile\\UpdateProfileDTO.cs",
+              "ToolTip": "C:\\Users\\moyses\\Desktop\\TCC\\medihome\\Back-end\\WebMediHome\\Dto\\Profile\\UpdateProfileDTO.cs",
+              "RelativeToolTip": "WebMediHome\\Dto\\Profile\\UpdateProfileDTO.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAqwAwAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-02T09:08:17.732Z",
+              "WhenOpened": "2024-12-03T08:26:54.844Z",
               "EditorCaption": ""
             },
             {
@@ -96,22 +57,61 @@
               "RelativeDocumentMoniker": "WebMediHome\\Services\\Profile\\IProfileService.cs",
               "ToolTip": "C:\\Users\\moyses\\Desktop\\TCC\\medihome\\Back-end\\WebMediHome\\Services\\Profile\\IProfileService.cs",
               "RelativeToolTip": "WebMediHome\\Services\\Profile\\IProfileService.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAqwAYAAAAVAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAqwAcAAABoAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-02T09:08:29.299Z",
+              "WhenOpened": "2024-12-03T08:13:25.174Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 1,
+              "Title": "ProfileService.cs",
+              "DocumentMoniker": "C:\\Users\\moyses\\Desktop\\TCC\\medihome\\Back-end\\WebMediHome\\Services\\Profile\\ProfileService.cs",
+              "RelativeDocumentMoniker": "WebMediHome\\Services\\Profile\\ProfileService.cs",
+              "ToolTip": "C:\\Users\\moyses\\Desktop\\TCC\\medihome\\Back-end\\WebMediHome\\Services\\Profile\\ProfileService.cs",
+              "RelativeToolTip": "WebMediHome\\Services\\Profile\\ProfileService.cs",
+              "ViewState": "AgIAAFkAAAAAAAAAAAAiwGQAAAAIAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-03T08:13:33.201Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
               "Title": "ProfileController.cs",
               "DocumentMoniker": "C:\\Users\\moyses\\Desktop\\TCC\\medihome\\Back-end\\WebMediHome\\Controllers\\ProfileController.cs",
               "RelativeDocumentMoniker": "WebMediHome\\Controllers\\ProfileController.cs",
               "ToolTip": "C:\\Users\\moyses\\Desktop\\TCC\\medihome\\Back-end\\WebMediHome\\Controllers\\ProfileController.cs",
               "RelativeToolTip": "WebMediHome\\Controllers\\ProfileController.cs",
-              "ViewState": "AgIAAAwAAAAAAAAAAAA7wBMAAAAIAAAAAAAAAA==",
+              "ViewState": "AgIAABgAAAAAAAAAAAAUwCAAAAAMAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-02T08:50:23.334Z",
+              "WhenOpened": "2024-12-03T08:13:14.671Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "ClientController.cs",
+              "DocumentMoniker": "C:\\Users\\moyses\\Desktop\\TCC\\medihome\\Back-end\\WebMediHome\\Controllers\\ClientController.cs",
+              "RelativeDocumentMoniker": "WebMediHome\\Controllers\\ClientController.cs",
+              "ToolTip": "C:\\Users\\moyses\\Desktop\\TCC\\medihome\\Back-end\\WebMediHome\\Controllers\\ClientController.cs",
+              "RelativeToolTip": "WebMediHome\\Controllers\\ClientController.cs",
+              "ViewState": "AgIAAAsAAAAAAAAAAAAiwBQAAAAIAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-03T07:28:13.324Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "launchSettings.json",
+              "DocumentMoniker": "C:\\Users\\moyses\\Desktop\\TCC\\medihome\\Back-end\\WebMediHome\\Properties\\launchSettings.json",
+              "RelativeDocumentMoniker": "WebMediHome\\Properties\\launchSettings.json",
+              "ToolTip": "C:\\Users\\moyses\\Desktop\\TCC\\medihome\\Back-end\\WebMediHome\\Properties\\launchSettings.json",
+              "RelativeToolTip": "WebMediHome\\Properties\\launchSettings.json",
+              "ViewState": "AgIAAA0AAAAAAAAAAAAAAAoAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2024-12-03T08:07:39.587Z",
               "EditorCaption": ""
             }
           ]

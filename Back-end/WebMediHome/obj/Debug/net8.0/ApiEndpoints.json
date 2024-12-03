@@ -278,7 +278,7 @@
       },
       {
         "Name": "updatedProfile",
-        "Type": "WebMediHome.Model.ClientModel",
+        "Type": "WebMediHome.Dto.Profile.UpdateProfileDTO",
         "IsRequired": true
       }
     ],

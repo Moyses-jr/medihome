@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("WebMediHome")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+b28152bcae3bb61c95ce506764f22bfb852f1302")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+2e2a6bd133b871a51b44ec17ee14437bdb459b52")]
 [assembly: System.Reflection.AssemblyProductAttribute("WebMediHome")]
 [assembly: System.Reflection.AssemblyTitleAttribute("WebMediHome")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

@@ -13,17 +13,14 @@ namespace WebMediHome.Services.Profile
         {
             _dbContext = dbContext;
         }
-        // Buscar informações
         public async Task<object?> GetProfileAsync(int userId)
         {
-            // Busca por cliente vinculado ao usuário
             var client = await _dbContext.Clients
                 .Include(c => c.User)
                 .FirstOrDefaultAsync(c => c.IdUser == userId);
 
             if (client != null)
             {
-                // Retorna o ClientDTO
                 return new ClientDTO
                 {
                     IdClient = client.IdClient,
@@ -38,13 +35,11 @@ namespace WebMediHome.Services.Profile
                 };
             }
 
-            // Caso não seja cliente, busca apenas o usuário
             var user = await _dbContext.Users
                 .FirstOrDefaultAsync(u => u.IdUser == userId);
 
             if (user != null)
             {
-                // Retorna o UserDTO
                 return new UserDTO
                 {
                     IdUser = user.IdUser,
@@ -54,13 +49,13 @@ namespace WebMediHome.Services.Profile
                 };
             }
 
-            // Retorna null caso não encontre nada
             return null;
         }
 
-        public async Task<bool> UpdateProfileAsync(int userId, ClientModel updatedProfile)
+        public async Task<bool> UpdateProfileAsync(int userId, ClientModel updatedProfile, string? newPassword = null)
         {
             var client = await _dbContext.Clients
+                .Include(c => c.User) 
                 .FirstOrDefaultAsync(c => c.IdUser == userId);
 
             if (client != null)
@@ -72,12 +67,16 @@ namespace WebMediHome.Services.Profile
                 client.PhoneNumber = updatedProfile.PhoneNumber;
                 client.RegisterBorn = updatedProfile.RegisterBorn;
 
-                // Atualiza as informações do usuário associado
                 if (client.User != null)
                 {
                     client.User.FirstName = updatedProfile.FirstName;
                     client.User.LastName = updatedProfile.LastName;
                     client.User.Email = updatedProfile.Email;
+
+                    if (!string.IsNullOrWhiteSpace(newPassword))
+                    {
+                        client.User.Password = newPassword;
+                    }
                 }
             }
             else
@@ -90,6 +89,11 @@ namespace WebMediHome.Services.Profile
                 user.FirstName = updatedProfile.FirstName;
                 user.LastName = updatedProfile.LastName;
                 user.Email = updatedProfile.Email;
+
+                if (!string.IsNullOrWhiteSpace(newPassword))
+                {
+                    user.Password = newPassword;
+                }
             }
 
             var changes = await _dbContext.SaveChangesAsync();
