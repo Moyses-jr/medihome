@@ -10,6 +10,7 @@ import {
   FaUserGear,
   FaGears,
   FaPowerOff,
+  FaUserDoctor,
 } from "react-icons/fa6";
 import {
   Tooltip,
@@ -89,17 +90,17 @@ const Sidebar = () => {
             <Tooltip>
               <TooltipTrigger asChild>
                 <Link
-                  href={"/settings"}
+                  href={"/professional"}
                   className="flex items-center gap-4 px-2.5  hover:text-muted-foreground"
                 >
-                  <FaGears className="h-5 w-5 transition-all " />
+                  <FaUserDoctor className="h-5 w-5 transition-all " />
                 </Link>
               </TooltipTrigger>
               <TooltipContent
                 className="bg-red-200 px-3 py-2 rounded-xl bg-opacity-90"
                 side="right"
               >
-                Configurações
+                Oferecer seus serviços
               </TooltipContent>
             </Tooltip>
           </TooltipProvider>
