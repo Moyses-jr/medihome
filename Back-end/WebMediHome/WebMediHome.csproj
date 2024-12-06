@@ -24,7 +24,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Services\Livro\" />
     <Folder Include="Services\Comment\" />
     <Folder Include="Services\Contract\" />
   </ItemGroup>

@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using WebMediHome.Dto.ProfessionalDTO;
 using WebMediHome.Model;
 using WebMediHome.Security;
 using WebMediHome.Services.Professional;
@@ -34,10 +35,11 @@ namespace WebMediHome.Controllers
         }
 
         [HttpPost]
-        public async Task<IActionResult> AddProfessional(ProfessionalModel professional)
+        public async Task<IActionResult> AddProfessional([FromForm] ProfessionalDTO professional)
         {
             await _professionalService.AddProfessionalAsync(professional);
-            return CreatedAtAction(nameof(GetProfessionalById), new { id = professional.IdProfessional }, professional);
+
+            return Ok(professional);
         }
 
         [HttpPut("{id}")]

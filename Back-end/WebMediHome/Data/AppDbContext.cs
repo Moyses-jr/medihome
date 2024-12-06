@@ -8,8 +8,6 @@ namespace WebMediHome.Data
         {
 
         }
-        //public DbSet<LivroModel> Livros { get; set; }
-        //public DbSet<AutorModel> Autores { get; set; }
         public DbSet<UserModel> Users { get; set; }
         public DbSet<ClientModel> Clients { get; set; }
         public DbSet<ProfessionalModel> Professionals { get; set; }

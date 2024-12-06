@@ -1,4 +1,5 @@
-﻿using WebMediHome.Model;
+﻿using WebMediHome.Dto.ProfessionalDTO;
+using WebMediHome.Model;
 
 namespace WebMediHome.Services.Professional
 {
@@ -6,7 +7,7 @@ namespace WebMediHome.Services.Professional
     {
         Task<IEnumerable<ProfessionalModel>> GetAllProfessionalsAsync();
         Task<ProfessionalModel?> GetProfessionalByIdAsync(int id);
-        Task AddProfessionalAsync(ProfessionalModel professional);
+        Task AddProfessionalAsync(ProfessionalDTO professional);
         Task UpdateProfessionalAsync(ProfessionalModel professional);
         Task DeleteProfessionalAsync(int id);
         Task AssociateClientAsync(int professionalId, int clientId);

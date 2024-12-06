@@ -17,8 +17,6 @@ builder.Services.AddSwaggerGen();
 var connectionStrings = builder.Configuration.GetConnectionString("DefaultConnection");
 
 builder.Services.Configure<AppSettings>(builder.Configuration.GetSection("AppSettings"));
-//var key = Encoding.ASCII.GetBytes(builder.Configuration["AppSettings:Secret"]);
-//builder.Services.Configure<Microsoft.AspNetCore.Http.Json.JsonOptions>(options => options.SerializerOptions.ReferenceHandler = ReferenceHandler.IgnoreCycles);
 
 builder.Services.AddScoped<IProfileService, ProfileService>();
 builder.Services.AddScoped<IUserService, UserService>();
@@ -32,14 +30,13 @@ builder.Services.AddDbContext<AppDbContext>(options =>
 
 builder.Services.AddSwaggerGen(swagger =>
 {
-    //This is to generate the Default UI of Swagger Documentation  
     swagger.SwaggerDoc("v1", new OpenApiInfo
     {
         Version = "v1",
         Title = "JWT Token Authentication API",
         Description = ".NET 8 Web API"
     });
-    // To Enable authorization using Swagger (JWT)  
+
     swagger.AddSecurityDefinition("Bearer", new OpenApiSecurityScheme()
     {
         Name = "Authorization",
@@ -67,12 +64,11 @@ builder.Services.AddSwaggerGen(swagger =>
 
 builder.Services.AddCors(options =>
 {
-    options.AddDefaultPolicy(policy =>
-    {
-        policy.AllowAnyOrigin()
+    options.AddPolicy("AllowSpecificOrigin", policy =>
+        policy.WithOrigins("http://localhost:3000")
+              .AllowAnyHeader()
               .AllowAnyMethod()
-              .AllowAnyHeader();
-    });
+              .AllowCredentials());
 });
 
 var app = builder.Build();
@@ -86,7 +82,7 @@ if (app.Environment.IsDevelopment())
 
 app.UseHttpsRedirection();
 
-app.UseCors();
+app.UseCors("AllowSpecificOrigin");
 
 app.UseAuthorization();
 

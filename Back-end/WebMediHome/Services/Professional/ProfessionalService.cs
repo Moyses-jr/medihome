@@ -1,5 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using WebMediHome.Data;
+using WebMediHome.Dto.ProfessionalDTO;
 using WebMediHome.Model;
 
 namespace WebMediHome.Services.Professional
@@ -22,10 +23,51 @@ namespace WebMediHome.Services.Professional
         {
             return await _dbContext.Professionals.FindAsync(id);
         }
-        public async Task AddProfessionalAsync(ProfessionalModel professional)
+        public async Task AddProfessionalAsync(ProfessionalDTO professional)
         {
-            await _dbContext.Professionals.AddAsync(professional);
+            string imagePath = null;
+
+            if (professional.Image != null && professional.Image.Length > 0)
+            {
+                imagePath = await SaveImageAsync(professional.Image);
+            }
+
+            var proModel = new ProfessionalModel
+            {
+                IdUser = professional.IdUser,
+                CRM = professional.CRM,
+                ExpirationCRM = professional.ExpirationCRM,
+                CNPJ = professional.CNPJ,
+                PhoneNumber = professional.PhoneNumber,
+                RegisterDate = professional.RegisterDate,
+                RegisterBorn = professional.RegisterBorn,
+                ProfessionalType = professional.ProfessionalType,
+                ImagePath = imagePath
+            };
+
+            await _dbContext.Professionals.AddAsync(proModel);
             await _dbContext.SaveChangesAsync();
+        }
+        private async Task<string> SaveImageAsync(IFormFile image)
+        {
+            var uploadsFolder = @"C:\Users\moyses\Desktop\TCC\medihome\Back-end\images";
+
+            //var uploadsFolder = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot/images");
+
+            if (!Directory.Exists(uploadsFolder))
+            {
+                Directory.CreateDirectory(uploadsFolder);
+            }
+
+            var uniqueFileName = $"{Guid.NewGuid()}_{image.FileName}";
+            var filePath = Path.Combine(uploadsFolder, uniqueFileName);
+
+            using (var stream = new FileStream(filePath, FileMode.Create))
+            {
+                await image.CopyToAsync(stream);
+            }
+
+            return $"/images/{uniqueFileName}";
         }
         public async Task UpdateProfessionalAsync(ProfessionalModel professional)
         {
@@ -34,13 +76,10 @@ namespace WebMediHome.Services.Professional
                 throw new KeyNotFoundException("Professional not found");
 
             // Atualiza os dados do profissional
-            existingProfessional.FirstName = professional.FirstName;
-            existingProfessional.LastName = professional.LastName;
             existingProfessional.CNPJ = professional.CNPJ;
             existingProfessional.CRM = professional.CRM;
             existingProfessional.ExpirationCRM = professional.ExpirationCRM;
             existingProfessional.ProfessionalType = professional.ProfessionalType;
-            existingProfessional.Email = professional.Email;
             existingProfessional.PhoneNumber = professional.PhoneNumber;
             existingProfessional.IsActive = professional.IsActive;
 

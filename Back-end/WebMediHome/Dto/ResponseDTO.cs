@@ -1,6 +1,6 @@
-﻿namespace WebMediHome.Model
+﻿namespace WebMediHome.Dto
 {
-    public class ResponseModel<T>
+    public class ResponseDTO<T>
     {
         public T? Dados { get; set; }
         public string Mensagem { get; set; } = string.Empty;

@@ -2,7 +2,7 @@
 
 namespace WebMediHome.Dto.User
 {
-    public class AuthenticateResponse
+    public class AuthenticateDTO
     {
         public int IdUser { get; set; }
         public string Token { get; set; }
@@ -10,7 +10,7 @@ namespace WebMediHome.Dto.User
         public string LastName { get; set; }
         public string Email { get; set; }
 
-        public AuthenticateResponse(UserModel userModel, string token)
+        public AuthenticateDTO(UserModel userModel, string token)
         {
             IdUser = userModel.IdUser;
             FirstName = userModel.FirstName;

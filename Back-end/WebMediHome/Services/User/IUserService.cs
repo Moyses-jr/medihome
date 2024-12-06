@@ -1,13 +1,14 @@
-﻿using WebMediHome.Dto.User;
+﻿using WebMediHome.Dto;
+using WebMediHome.Dto.User;
 using WebMediHome.Model;
 
 namespace WebMediHome.Services.User
 {
     public interface IUserService
     {
-        Task<AuthenticateResponse?> Authenticate(AuthenticateRequest model);
+        Task<AuthenticateDTO?> Authenticate(LoginDTO model);
         //Task<IEnumerable<UserModel>> GetAll();
         Task<UserModel?> GetUserId(int id);
-        Task<ResponseModel<UserModel?>> AddAndUpdateUser(UserModel userObj);
+        Task<ResponseDTO<UserModel?>> AddAndUpdateUser(UserModel userObj);
     }
 }

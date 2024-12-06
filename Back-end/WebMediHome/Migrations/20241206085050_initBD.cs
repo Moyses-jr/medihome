@@ -7,7 +7,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 namespace WebMediHome.Migrations
 {
     /// <inheritdoc />
-    public partial class initDB : Migration
+    public partial class initBD : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
@@ -21,12 +21,7 @@ namespace WebMediHome.Migrations
                 {
                     IdProfessional = table.Column<int>(type: "int", nullable: false)
                         .Annotation("MySql:ValueGenerationStrategy", MySqlValueGenerationStrategy.IdentityColumn),
-                    FirstName = table.Column<string>(type: "longtext", nullable: false)
-                        .Annotation("MySql:CharSet", "utf8mb4"),
-                    LastName = table.Column<string>(type: "longtext", nullable: false)
-                        .Annotation("MySql:CharSet", "utf8mb4"),
-                    Password = table.Column<string>(type: "longtext", nullable: false)
-                        .Annotation("MySql:CharSet", "utf8mb4"),
+                    IdUser = table.Column<int>(type: "int", nullable: false),
                     CNPJ = table.Column<string>(type: "longtext", nullable: false)
                         .Annotation("MySql:CharSet", "utf8mb4"),
                     CRM = table.Column<string>(type: "longtext", nullable: false)
@@ -34,12 +29,13 @@ namespace WebMediHome.Migrations
                     ExpirationCRM = table.Column<DateOnly>(type: "date", nullable: false),
                     ProfessionalType = table.Column<string>(type: "varchar(1)", nullable: false)
                         .Annotation("MySql:CharSet", "utf8mb4"),
-                    Email = table.Column<string>(type: "longtext", nullable: false)
-                        .Annotation("MySql:CharSet", "utf8mb4"),
                     PhoneNumber = table.Column<string>(type: "longtext", nullable: false)
                         .Annotation("MySql:CharSet", "utf8mb4"),
                     IsActive = table.Column<bool>(type: "tinyint(1)", nullable: false),
-                    RegisterDate = table.Column<DateOnly>(type: "date", nullable: false)
+                    RegisterDate = table.Column<DateOnly>(type: "date", nullable: false),
+                    RegisterBorn = table.Column<DateOnly>(type: "date", nullable: false),
+                    ImagePath = table.Column<string>(type: "longtext", nullable: true)
+                        .Annotation("MySql:CharSet", "utf8mb4")
                 },
                 constraints: table =>
                 {

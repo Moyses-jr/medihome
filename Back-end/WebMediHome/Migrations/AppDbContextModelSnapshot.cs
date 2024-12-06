@@ -106,27 +106,17 @@ namespace WebMediHome.Migrations
                         .IsRequired()
                         .HasColumnType("longtext");
 
-                    b.Property<string>("Email")
-                        .IsRequired()
-                        .HasColumnType("longtext");
-
                     b.Property<DateOnly>("ExpirationCRM")
                         .HasColumnType("date");
 
-                    b.Property<string>("FirstName")
-                        .IsRequired()
+                    b.Property<int>("IdUser")
+                        .HasColumnType("int");
+
+                    b.Property<string>("ImagePath")
                         .HasColumnType("longtext");
 
                     b.Property<bool>("IsActive")
                         .HasColumnType("tinyint(1)");
-
-                    b.Property<string>("LastName")
-                        .IsRequired()
-                        .HasColumnType("longtext");
-
-                    b.Property<string>("Password")
-                        .IsRequired()
-                        .HasColumnType("longtext");
 
                     b.Property<string>("PhoneNumber")
                         .IsRequired()
@@ -135,6 +125,9 @@ namespace WebMediHome.Migrations
                     b.Property<string>("ProfessionalType")
                         .IsRequired()
                         .HasColumnType("varchar(1)");
+
+                    b.Property<DateOnly>("RegisterBorn")
+                        .HasColumnType("date");
 
                     b.Property<DateOnly>("RegisterDate")
                         .HasColumnType("date");

@@ -44,7 +44,7 @@ namespace WebMediHome.Controllers
         }
 
         [HttpPost("login")]
-        public async Task<IActionResult> Login(AuthenticateRequest model)
+        public async Task<IActionResult> Login(LoginDTO model)
         {
             var response = await _userService.Authenticate(model);
     

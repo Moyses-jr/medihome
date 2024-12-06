@@ -4,6 +4,7 @@ using System.IdentityModel.Tokens.Jwt;
 using System.Security.Claims;
 using System.Text;
 using WebMediHome.Data;
+using WebMediHome.Dto;
 using WebMediHome.Dto.User;
 using WebMediHome.Model;
 
@@ -28,7 +29,7 @@ namespace WebMediHome.Services.User
         {
             return await _appDbContext.Users.FirstOrDefaultAsync(x => x.IdUser == id);
         }
-        public async Task<ResponseModel<UserModel?>> AddAndUpdateUser(UserModel userObj)
+        public async Task<ResponseDTO<UserModel?>> AddAndUpdateUser(UserModel userObj)
         {
             bool isSuccess = false;
             UserModel? updatedUser = null;
@@ -75,7 +76,7 @@ namespace WebMediHome.Services.User
                 }
             }
 
-            return new ResponseModel<UserModel?>
+            return new ResponseDTO<UserModel?>
             {
                 Dados = updatedUser,
                 Mensagem = message,
@@ -84,7 +85,7 @@ namespace WebMediHome.Services.User
 
         }
 
-        public async Task<AuthenticateResponse?> Authenticate(AuthenticateRequest model)
+        public async Task<AuthenticateDTO?> Authenticate(LoginDTO model)
         {
             var user = await _appDbContext.Users.SingleOrDefaultAsync(x => x.Email == model.Email && x.Password == model.Password);
 
@@ -92,7 +93,7 @@ namespace WebMediHome.Services.User
 
             var token = await GenerateJwtToken(user);
 
-            return new AuthenticateResponse(user, token);
+            return new AuthenticateDTO(user, token);
 
         }
 
